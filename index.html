@@ -265,7 +265,7 @@ input[type=range]:focus-visible{box-shadow:0 0 0 3px rgba(255,195,90,.45)}
 .stagebox{position:relative;display:flex;flex-direction:column;min-height:470px;isolation:isolate;background:#191310}
 .stagebox::before,.stagebox::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none}
 .stagebox::before{background:linear-gradient(#d6a17716 1px,transparent 1px),linear-gradient(90deg,#d6a17716 1px,transparent 1px),radial-gradient(ellipse at 50% 63%,#38271b,transparent 68%);background-size:28px 28px,28px 28px,100% 100%;mask-image:linear-gradient(transparent,#000 30%,#000 78%,transparent)}
-.stagebox::after{background:radial-gradient(ellipse at 50% 74%,#a3391a7d,#5b22116b 36%,transparent 72%);opacity:0;transition:opacity .65s}
+.stagebox::after{background:radial-gradient(ellipse at 50% 74%,color-mix(in srgb,var(--venue-light,#ffac69) 30%,transparent),#5b22116b 36%,transparent 72%);opacity:0;transition:opacity .65s}
 .stagebox[data-stage="3"]::after{opacity:.48}
 .stagebox[data-stage="4"]::after{opacity:1}
 .heat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;padding:22px 24px 0;z-index:1}
@@ -287,26 +287,18 @@ input[type=range]:focus-visible{box-shadow:0 0 0 3px rgba(255,195,90,.45)}
 .send{padding:13px clamp(14px,2.3vw,30px);display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;border-top:1px solid var(--line)}
 .send p{font-size:13px;color:var(--muted)}
 .send .btn{min-height:48px;padding:10px 19px;font-size:14px;white-space:normal}
-.fac .wall{fill:url(#wall);stroke:#8c6650;stroke-width:1}
-.fac .side{fill:#2a1d17;stroke:#7e5943;stroke-width:1}
-.fac .roof{fill:#59402e;stroke:#a67854;stroke-width:1}
-.fac .sign{fill:#1a1410;stroke:#926953;transition:stroke .38s}
-.fac .signtxt{fill:#c2a58e;font-family:Geologica,sans-serif;font-weight:800;letter-spacing:1px;transition:fill .38s}
-.fac .glass{fill:#1c1b1b;stroke:#a27a5e;transition:fill .7s}
-.fac .mull,.fac .brick{stroke:#a7795654;fill:none}
-.fac .aw{fill:#634131;transition:fill .45s}
-.fac .aw2{fill:#9f7257;transition:fill .45s}
-.fac .lighting,.fac .opening{opacity:0;transition:opacity .65s}
-.fac .opening{transition-delay:.16s}
-.fac .door-leaf{transform-box:fill-box;transform-origin:left center;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
-.fac.lv2 .sign{stroke:#ffad5d}
-.fac.lv2 .signtxt{fill:#ffe4ac;filter:drop-shadow(0 0 4px #ff6a1a)}
-.fac.lv2 .aw{fill:#bc4827}
-.fac.lv2 .aw2{fill:#e3b48c}
+.fac .sign{fill:#171413;stroke:#a3856f;transition:stroke .35s}
+.fac .signtxt{fill:#dbc5ad;font-family:Geologica,sans-serif;font-weight:800;letter-spacing:1.35px;transition:fill .35s}
+.fac .glass{fill:#201c1b;stroke:#bd9d81;transition:fill .65s}
+.fac .lighting,.fac .opening{opacity:0;transition:opacity .55s}
+.fac .opening{transition-delay:.26s}
+.fac .door-leaf{transform-box:fill-box;transform-origin:left center;transition:transform .72s cubic-bezier(.2,.7,.2,1) .15s}
+.fac.lv2 .sign{stroke:var(--trim)}
+.fac.lv2 .signtxt{fill:#fff0d7;filter:drop-shadow(0 0 4px var(--trim))}
 .fac.lv3 .glass{fill:url(#warm)}
 .fac.lv3 .lighting,.fac.lv4 .opening{opacity:1}
 .fac.lv4 .door-leaf{transform:scaleX(.23) skewY(12deg)}
-.venue-icon{fill:none;stroke:#fff0bf;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.venue-icon{fill:none;stroke:var(--trim);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .calc-sum{display:flex;gap:10px;align-items:center;background:rgba(255,106,26,.12);border:1px solid rgba(255,106,26,.4);border-radius:14px;padding:10px 14px;font-size:14px;font-weight:700;margin-top:14px}
 .calc-sum svg{width:16px;height:22px;flex:none}
 .calc-sum[hidden]{display:none}
@@ -449,6 +441,12 @@ footer{border-top:1px solid var(--line);padding:44px 0 28px}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .rv{opacity:1;transform:none}
+}
+@media (prefers-reduced-motion:no-preference){
+  .hero-vis .main img{animation:grill-reveal 1.55s cubic-bezier(.18,.75,.2,1) both}
+  .hero-vis .main::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(115deg,transparent 23%,#ff9a4244 48%,transparent 72%);transform:translateX(-100%);animation:grill-light 1.45s .15s ease-out both}
+  @keyframes grill-reveal{from{transform:scale(1.14);filter:brightness(.58) saturate(.72)}to{transform:scale(1.04);filter:none}}
+  @keyframes grill-light{from{transform:translateX(-100%);opacity:0}35%{opacity:1}to{transform:translateX(100%);opacity:0}}
 }
 /* Keep anchors clear of the fixed header and mobile shortcut. */
 section[id],.stagebox,#draftTitle{scroll-margin-top:90px}
@@ -621,13 +619,13 @@ section[id],.stagebox,#draftTitle{scroll-margin-top:90px}
             <button type="button" aria-pressed="false" data-p="no">Ще шукаю</button>
           </div>
         </div>
-        <div class="ignite"><button type="button" class="btn btn-fire" id="igniteBtn"><svg aria-hidden="true" viewBox="0 0 30 40"><use href="#flame"/></svg>Розпалити мій заклад</button></div>
+        <div class="ignite"><button type="button" class="btn btn-fire" id="igniteBtn"><svg aria-hidden="true" viewBox="0 0 30 40"><use href="#flame"/></svg><span>Розпалити мій заклад</span></button></div>
       </div>
       <div class="stagebox">
         <div class="heat" id="heat"><div>Іскра</div><div>Розпал</div><div>Жар</div><div>Вогонь</div></div>
         <div class="scene">
           <p class="hint" id="hint" role="status">Оберіть формат, щоб засвітити вивіску.</p>
-          <svg class="fac" id="fac" viewBox="0 0 560 322" preserveAspectRatio="xMidYMax meet" role="img" aria-label="Ілюстрація вашого майбутнього закладу"></svg>
+          <svg class="fac" id="fac" viewBox="15 12 530 310" preserveAspectRatio="xMidYMax meet" role="img" aria-label="Ілюстрація вашого майбутнього закладу"></svg>
           <canvas id="burst" aria-hidden="true"></canvas>
         </div>
       </div>
@@ -995,7 +993,7 @@ if(cv && !reduce){
   const ctx=cv.getContext('2d'); let W,H,ps=[];
   const size=()=>{const d=Math.min(devicePixelRatio||1,2);W=cv.offsetWidth;H=cv.offsetHeight;cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0)};
   size(); addEventListener('resize',size);
-  const N=innerWidth<700?22:48;
+  const N=innerWidth<700?16:34;
   const mk=()=>({x:Math.random()*W,y:H+Math.random()*H*.4,r:Math.random()*2+.6,vy:-(Math.random()*1.1+.4),vx:(Math.random()-.5)*.4,w:Math.random()*6.3,life:0,max:Math.random()*260+180});
   for(let i=0;i<N;i++){const p=mk();p.y=Math.random()*H;ps.push(p)}
   let vis=true; new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(cv);
@@ -1047,50 +1045,53 @@ function estimate(sqm){
   return {fee:tier.fee.toLocaleString('uk-UA')+' $',investment:`${low}–${high} тис. $`,term:'1,5–3 міс.'};
 }
 const S={f:null,s:'ВАШ ЗАКЛАД',area:35,prem:null,ft:false,at:false,lit:false};
-let facadeKey='', burstFrame;
+let facadeKey='', burstFrame, burstTimer;
+// Each format has its own silhouette, storefront and palette.
+const storefronts={
+  'БУРГЕРНА':{wall:'#843c31',trim:'#ff855a',light:'#ffd684',shape:'M90 247V100H470V247Z',decor:'<path d="M84 102h392v14H84z" fill="#331d20"/><path d="M88 117h384" stroke="#ff8b5b" stroke-width="3"/><path d="M102 225h345v20H102z" fill="url(#checks)" opacity=".75"/>',windows:[{x:111,w:148},{x:271,w:90}],door:385},
+  'ШАУРМА':{wall:'#48534d',trim:'#acd58c',light:'#fceeb1',shape:'M116 247V104L137 86H420L449 105V247Z',decor:'<path d="M102 99L130 78h302l30 21v13H102z" fill="#2d3833" stroke="#a5ba92"/><path d="M109 120H454M109 125H454" stroke="#738d76"/><path d="M132 210h221v17H132z" fill="#b5c0a8"/><path d="M133 230h222" stroke="#232e2b" stroke-width="6"/>',windows:[{x:135,w:208,y:155,h:55}],door:373,shutter:false},
+  "КАВ'ЯРНЯ":{wall:'#395750',trim:'#9fddbd',light:'#fbe0ad',shape:'M110 247V89H450V247Z',decor:'<path d="M99 89h362v12H99z" fill="#21352c" stroke="#a6b095"/><path d="M115 226h222v21H115z" fill="#293b33"/><path d="M123 234h205" stroke="#6b9e82"/><path d="M96 247h-19l-3-17h25Z M461 247h17l4-17h-25Z" fill="#a46647"/><path d="M86 232q-15-10-11-29q13 2 13 18q4-18 12-18q2 15-12 29m376 0q-11-10-10-24q9 2 12 13q5-16 13-18q3 15-12 29" fill="#81986a"/>',windows:[{x:133,w:91,arch:true},{x:235,w:91,arch:true}],door:361},
+  'ПІЦЕРІЯ':{wall:'#8c5039',trim:'#ffd09e',light:'#ffbe76',shape:'M105 247V114H455V247Z',decor:'<path d="M76 116L113 91H447l37 25Z" fill="#733b3d" stroke="#c77c65"/><path d="M105 150h350v97H105z" fill="url(#brick)"/><path d="M107 224h348" stroke="#371f17" stroke-width="2"/>',windows:[{x:128,w:91,arch:true},{x:231,w:91,arch:true}],door:361},
+  'СУШІ':{wall:'#3c393a',trim:'#f8a594',light:'#f9d4ab',shape:'M90 247V111H470V247Z',decor:'<path d="M68 105q47 2 65-23h294q24 25 65 23l-20 16H88Z" fill="#3a252a" stroke="#ad706b"/><path d="M99 130h362v6H99z" fill="#975254"/><circle cx="132" cy="157" r="11" fill="#b65758"/><circle cx="428" cy="157" r="11" fill="#b65758"/><path d="M132 143v-7m296 7v-7" stroke="#dea292"/>',windows:[{x:153,w:81,y:170},{x:326,w:81,y:170}],door:257},
+  'ПЕКАРНЯ':{wall:'#a16d51',trim:'#ffdb9f',light:'#ffd389',shape:'M116 247V121L208 78H356L448 121V247Z',decor:'<path d="M98 126L204 74h156l106 52h-23l-90-43H211l-90 43Z" fill="#754638" stroke="#d2945c"/><circle cx="282" cy="99" r="12" fill="#54362a" stroke="#edb780"/><path d="M270 99h24m-12-12v24" stroke="#edb780"/><path d="M127 231h305" stroke="#d6a27b" stroke-width="5"/>',windows:[{x:139,w:184,y:165}],door:366,signY:118},
+  'ЧЕБУРЕЧНА':{wall:'#4d655f',trim:'#ffd47e',light:'#fff0bd',shape:'M108 247V122Q108 102 130 102H433Q451 102 451 121V247Z',decor:'<path d="M98 120h362v11H98zM110 221h341v12H110z" fill="#d8a449"/><path d="M110 235h341" stroke="#b78035"/><path d="M134 214h196v10H134z" fill="#cba888"/>',windows:[{x:133,w:195,y:163,h:51}],door:361,signY:131},
+  'РЕСТОРАН':{wall:'#57434c',trim:'#eabd88',light:'#ffe0a8',shape:'M75 247V97H485V247Z',decor:'<path d="M65 90h430v12H65z" fill="#332730" stroke="#af8062"/><path d="M84 142h392M86 232h388M107 109v128m346-128v128" stroke="#ae8364" stroke-width="2"/><path d="M234 248h92v6h-92zm-8 8h108v4H226z" fill="#795947"/>',windows:[{x:125,w:88,arch:true},{x:347,w:88,arch:true}],door:255}
+};
 function facade(tier,label,icon){
-  const width=[238,294,342,390,430][tier], height=[157,168,175,183,192][tier];
-  const ground=252, x=(560-width)/2-9, y=ground-height, right=x+width;
-  const depth=24, glassY=y+82, glassH=ground-glassY-9;
-  const doorW=tier===0?38:46, doorX=right-doorW-14;
-  const windows=[1,2,2,3,3][tier], gap=10;
-  const windowW=(doorX-x-28-gap*(windows-1))/windows;
-  let svg=`<defs>
-    <linearGradient id="wall" x2="0" y2="1"><stop stop-color="#72513c"/><stop offset="1" stop-color="#3c2b22"/></linearGradient>
-    <linearGradient id="warm" x2="0" y2="1"><stop stop-color="#fbc67e"/><stop offset="1" stop-color="#af4824"/></linearGradient>
-    <radialGradient id="streetGlow"><stop stop-color="#ff8a38" stop-opacity=".66"/><stop offset="1" stop-color="#f56c20" stop-opacity="0"/></radialGradient>
-    <linearGradient id="doorLight" x2="0" y2="1"><stop stop-color="#ffca72" stop-opacity=".58"/><stop offset="1" stop-color="#ff6a1a" stop-opacity="0"/></linearGradient>
+  const design=storefronts[label]||storefronts['РЕСТОРАН'];
+  const {wall,trim,light,shape,decor,windows,door,signY=111}=design;
+  const scale=[.88,1,1.06,1.11,1.15][tier];
+  stagebox.style.setProperty('--venue-light',light);
+  const glazing=windows.map(({x,w,y=153,h=224-y,arch})=>{
+    const shape=arch?`M${x} ${y+h}v-${h-18}a${w/2} 18 0 0 1 ${w} 0v${h-18}Z`:`M${x} ${y}h${w}v${h}h-${w}Z`;
+    const bars=design.shutter===false?`M${x+9} ${y+18}h${w-18}`:`M${x+w/2} ${y+5}v${h-5}m-${w/2} -${h*.24}h${w}`;
+    return `<path class="glass" d="${shape}"/><path d="${bars}" fill="none" stroke="${wall}" stroke-width="2"/><path class="lighting" d="M${x+11} ${y+30}l12 -18h6l-15 22z" fill="#fff2cf"/>`;
+  }).join('');
+  fac.innerHTML=`<defs>
+    <linearGradient id="warm" x2="0" y2="1"><stop stop-color="${light}"/><stop offset="1" stop-color="#9e422b"/></linearGradient>
+    <linearGradient id="doorLight" x2="0" y2="1"><stop stop-color="${light}" stop-opacity=".7"/><stop offset="1" stop-color="${trim}" stop-opacity="0"/></linearGradient>
+    <radialGradient id="streetGlow"><stop stop-color="${light}" stop-opacity=".55"/><stop offset="1" stop-color="${trim}" stop-opacity="0"/></radialGradient>
+    <pattern id="brick" width="32" height="15" patternUnits="userSpaceOnUse"><path d="M0 0h32M0 7.5h32M8 0v7.5m16 0v7.5" stroke="#43271d" opacity=".45"/></pattern>
+    <pattern id="checks" width="18" height="18" patternUnits="userSpaceOnUse"><path d="M0 0h9v9H0zm9 9h9v9H9z" fill="#d9a992"/></pattern>
   </defs>
-  <path d="M12 252H548M40 267H520M20 291H540M108 252L75 320M452 252L485 320" fill="none" stroke="#997359" stroke-opacity=".32"/>
-  <ellipse cx="280" cy="260" rx="${width*.57}" ry="13" fill="#080605" opacity=".65"/>
-  <ellipse class="lighting" cx="280" cy="263" rx="${width*.53}" ry="43" fill="url(#streetGlow)"/>
-  <path class="side" d="M${right} ${y}l${depth} -15v${height}l-${depth} 15z"/>
-  <rect class="wall" x="${x}" y="${y}" width="${width}" height="${height}"/>
-  <path class="roof" d="M${x-6} ${y}l${depth} -15h${width+12}l-${depth} 15z"/>
-  <path class="brick" d="M${right+4} ${y+42}l16 -10m-16 37 16 -10m-16 37 16 -10m-16 37 16 -10"/>
-  <rect class="sign" x="${x+15}" y="${y+12}" width="${width-30}" height="37" rx="4"/>
-  <text class="signtxt" x="${x+width/2+(icon?12:0)}" y="${y+31}" text-anchor="middle" dominant-baseline="central" font-size="${tier===0?15:19}">${label}</text>`;
-  if(icon)svg+=`<use class="venue-icon" href="${icon}" x="${x+28}" y="${y+20}" width="21" height="21"/>`;
-  const strips=Math.round((width-20)/22), stripW=(width-20)/strips;
-  for(let i=0;i<strips;i++){
-    const stripX=x+10+i*stripW;
-    svg+=`<path class="${i%2?'aw2':'aw'}" d="M${stripX} ${y+56}h${stripW+.12}v12q0 7 -${stripW/2} 7t-${stripW/2+.12} -7z"/>`;
-  }
-  for(let i=0;i<windows;i++){
-    const windowX=x+14+i*(windowW+gap);
-    svg+=`<rect class="glass" x="${windowX}" y="${glassY}" width="${windowW}" height="${glassH}" rx="2"/>
-    <path class="mull" d="M${windowX+windowW/2} ${glassY}v${glassH}m-${windowW/2} -10h${windowW}"/>
-    <path class="lighting" d="M${windowX+8} ${glassY+6}h5l-11 20v-8z" fill="#fff4ca" opacity=".5"/>`;
-  }
-  svg+=`<path class="opening" d="M${doorX} ${ground}h${doorW}l33 50h-${doorW+66}z" fill="url(#doorLight)"/>
-  <rect x="${doorX}" y="${glassY}" width="${doorW}" height="${glassH+9}" rx="2" fill="#100b09" stroke="#a27a5e"/>
-  <g class="opening"><rect x="${doorX+2}" y="${glassY+2}" width="${doorW-4}" height="${glassH+5}" rx="2" fill="url(#warm)"/>
-  <path d="M${doorX+4} ${ground-29}h${doorW-8}m-${doorW-8} 12h${doorW-8}" stroke="#86432c" opacity=".65"/></g>
-  <g class="door-leaf"><rect class="glass" x="${doorX+1}" y="${glassY+1}" width="${doorW-2}" height="${glassH+7}" rx="2"/>
-  <path d="M${doorX+doorW-8} ${glassY+glassH*.58}v8" stroke="#ffe3ae" stroke-width="2"/></g>
-  <g class="opening"><rect x="${doorX+doorW/2-31}" y="${glassY-14}" width="62" height="15" rx="3" fill="#7b351d" stroke="#ffb463"/>
-  <text x="${doorX+doorW/2}" y="${glassY-6}" text-anchor="middle" dominant-baseline="central" fill="#fff3d6" font-size="8" font-family="JetBrains Mono,monospace" font-weight="700">ВІДЧИНЕНО</text></g>`;
-  fac.innerHTML=svg;
+  <path d="M12 253H548M30 273H530m-510 28h520M135 249l-58 73m348-73 58 73" fill="none" stroke="#997359" stroke-opacity=".32"/>
+  <g class="storefront" style="--trim:${trim}" transform="translate(280 249) scale(${scale}) translate(-280 -249)">
+    <ellipse cx="280" cy="254" rx="215" ry="16" fill="#080605" opacity=".75"/>
+    <ellipse class="lighting" cx="280" cy="257" rx="215" ry="53" fill="url(#streetGlow)"/>
+    <path d="${shape}" fill="#110e0e" stroke="#100b09" stroke-width="6" transform="translate(9 -4)"/>
+    <path d="${shape}" fill="${wall}" stroke="${trim}" stroke-opacity=".52"/>
+    ${decor}${glazing}
+    <rect class="sign" x="183" y="${signY}" width="194" height="29" rx="3"/>
+    ${icon?`<use class="venue-icon" href="${icon}" x="195" y="${signY+6}" width="17" height="17"/>`:''}
+    <text class="signtxt" x="${icon?291:280}" y="${signY+15}" text-anchor="middle" dominant-baseline="central" font-size="15">${label}</text>
+    <path class="opening" d="M${door} 247h50l44 60H${door-44}Z" fill="url(#doorLight)"/>
+    <rect x="${door}" y="158" width="50" height="89" rx="3" fill="#141010" stroke="${trim}"/>
+    <rect class="opening" x="${door+2}" y="160" width="46" height="87" fill="url(#warm)"/>
+    <g class="door-leaf"><rect class="glass" x="${door+2}" y="160" width="46" height="87"/>
+      <path d="M${door+39} 200v10" stroke="${trim}" stroke-width="2"/></g>
+    <g class="opening"><rect x="${door-6}" y="146" width="62" height="13" rx="3" fill="#211512" stroke="${trim}"/>
+      <text x="${door+25}" y="153" text-anchor="middle" dominant-baseline="central" fill="#fff3d6" font-size="8" font-family="JetBrains Mono,monospace">ВІДЧИНЕНО</text></g>
+  </g>`;
 }
 const lvl=()=>S.lit?4:S.ft?(S.at||S.prem?3:2):1;
 function render(){
@@ -1125,7 +1126,7 @@ function burst(){
   cancelAnimationFrame(burstFrame);
   const ctx=cv.getContext('2d'), d=Math.min(devicePixelRatio||1,2), W=cv.offsetWidth, H=cv.offsetHeight;
   cv.width=W*d; cv.height=H*d; ctx.setTransform(d,0,0,d,0,0);
-  const ps=Array.from({length:110},()=>({x:W/2+(Math.random()-.5)*W*.5,y:H*.7,vx:(Math.random()-.5)*3.2,vy:-(Math.random()*5+2.5),r:Math.random()*2.2+.8,l:0,m:Math.random()*50+50}));
+  const ps=Array.from({length:74},()=>({x:W/2+(Math.random()-.5)*W*.5,y:H*.78,vx:(Math.random()-.5)*3.2,vy:-(Math.random()*5+2.5),r:Math.random()*1.35+.65,l:0,m:Math.random()*50+50}));
   (function f(){ctx.clearRect(0,0,W,H);ctx.globalCompositeOperation='lighter';let alive=0;
     for(const p of ps){if(p.l>p.m)continue;alive++;p.l++;p.x+=p.vx;p.y+=p.vy;p.vy+=.07;const k=1-p.l/p.m;
       const g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*4);g.addColorStop(0,`rgba(255,${200-p.l*1.5|0},80,${k})`);g.addColorStop(1,'rgba(232,50,30,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(p.x,p.y,p.r*4,0,7);ctx.fill()}
@@ -1133,7 +1134,13 @@ function burst(){
 }
 $$('#fchips .fchip').forEach(c=>c.addEventListener('click',()=>{
   $$('#fchips .fchip').forEach(x=>x.setAttribute('aria-pressed',x===c));
-  S.f=c.dataset.f; S.s=c.dataset.s; S.icon=c.querySelector('use').getAttribute('href'); S.ft=true; render();
+  if(S.f===c.dataset.f)return;
+  clearTimeout(burstTimer);
+  S.f=c.dataset.f; S.s=c.dataset.s; S.icon=c.querySelector('use').getAttribute('href'); S.ft=true; S.lit=false;
+  igBtn.querySelector('span').textContent='Розпалити мій заклад';
+  $('#sendBtn').classList.replace('btn-fire','btn-ghost');
+  render();
+  if(!reduce)fac.animate([{opacity:.32,transform:'translateY(9px)'},{opacity:1,transform:'none'}],{duration:340,easing:'ease-out'});
 }));
 area.addEventListener('input',()=>{S.at=true;render()});
 $$('#prem button').forEach(b=>b.addEventListener('click',()=>{
@@ -1145,10 +1152,25 @@ igBtn.addEventListener('click',()=>{
     $('#fchips .fchip').focus();
     return;
   }
-  S.lit=true; render();
+  const replay=S.lit;
+  S.lit=true;
+  render();
   if(innerWidth<=900)stagebox.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
-  burst();
-  igBtn.innerHTML='<svg aria-hidden="true" viewBox="0 0 30 40"><use href="#flame"/></svg>Показати запалений фасад';
+  if(!reduce){
+    if(replay){
+      fac.querySelector('.door-leaf').animate([
+        {transform:'none'},{transform:'scaleX(.23) skewY(12deg)'}
+      ],{duration:620,easing:'cubic-bezier(.2,.7,.2,1)'});
+    }
+    stagebox.animate([
+      {boxShadow:'inset 0 -90px 100px -95px transparent'},
+      {boxShadow:'inset 0 -90px 100px -55px #ec622675',offset:.42},
+      {boxShadow:'inset 0 -90px 100px -95px transparent'}
+    ],{duration:1100,easing:'ease-out'});
+    clearTimeout(burstTimer);
+    burstTimer=setTimeout(burst,innerWidth<=900?340:180);
+  }
+  igBtn.querySelector('span').textContent='Повторити відкриття';
   $('#sendBtn').classList.replace('btn-ghost','btn-fire');
 });
 const form=$('#leadForm'), formBody=$('.fbody'), formatField=$('#ffmt'), areaField=$('#farea');
