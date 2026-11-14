@@ -1,0 +1,10 @@
+# zoom recording, transcript and helper scripts — private
+*.mp4
+!video/kitchen.mp4
+_tools/
+# extra photos (resume, competitor logo) — not for the site
+_zayve/
+# original phone video (converted copy is video/kitchen.mp4)
+video/*.mov
+.claude/
+_test-*.html
