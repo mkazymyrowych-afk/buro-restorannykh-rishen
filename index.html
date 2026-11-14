@@ -219,6 +219,18 @@ h2 em,h1 em{font-style:normal;color:var(--fire)}
 .fmt h3{font-size:17.5px;position:relative;z-index:2}
 .fmt p{font-size:13.5px;color:var(--muted);position:relative;z-index:2;margin-top:2px}
 .fmt .ico{position:absolute;top:16px;left:18px;color:var(--fire);width:30px;height:30px}
+.fmt.pic{border-color:rgba(255,236,214,.14)}
+.fmt.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s,filter .6s;filter:brightness(.78) saturate(1.05)}
+.fmt.pic:hover img{transform:scale(1.07);filter:brightness(.9) saturate(1.1)}
+.fmt.pic::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,11,10,.15) 0%,rgba(13,11,10,.35) 40%,rgba(13,11,10,.94) 100%);z-index:1}
+.fmt.pic .ico{z-index:2;color:#fff;background:rgba(232,50,30,.85);border-radius:10px;padding:5px;width:34px;height:34px;box-shadow:0 6px 16px -6px rgba(232,50,30,.9)}
+.fmt.pic p{color:#e3d8cc}
+.fmt.cta{grid-column:span 2;background:linear-gradient(135deg,#e8321e,#ff7a1a);border-color:transparent;justify-content:center}
+.fmt.cta .cta-k{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.85)}
+.fmt.cta h3{font-size:20px;margin-top:6px;color:#fff}
+.fmt.cta p{color:#fff;font-weight:700;display:flex;align-items:center;gap:8px;margin-top:8px}
+.fmt.cta p svg{width:18px;height:18px;transition:transform .3s}
+.fmt.cta:hover p svg{transform:translateX(5px)}
 .fmt.photo{grid-column:span 2;grid-row:span 2}
 .fmt.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .fmt.photo:hover img{transform:scale(1.06)}
@@ -450,7 +462,9 @@ footer{border-top:1px solid var(--line);padding:44px 0 28px}
   .who,.stages,.pains{grid-template-columns:1fr}
   .who-card{min-height:0}
   .stage{min-height:0}
-  .formats{grid-template-columns:1fr 1fr;grid-auto-rows:128px;gap:10px}
+  .formats{grid-template-columns:1fr 1fr;grid-auto-rows:150px;gap:10px}
+  .fmt.pic .ico{width:28px;height:28px;padding:4px}
+  .fmt.pic h3{font-size:15.5px;line-height:1.2}
   .fmt{padding:15px}
   .fmt h3{font-size:16px}
   .fmt .ico{left:15px;top:14px}
@@ -830,15 +844,16 @@ section[id],.stagebox,#draftTitle{scroll-margin-top:90px}
     </div>
     <div class="formats">
       <div class="fmt photo rv"><img src="img/food/burger-black-grey.jpg" alt="Чорний бургер" loading="lazy"><h3>Бургерні</h3><p>Котлета, булка, соуси — все за техкартою</p></div>
-      <div class="fmt rv d1"><svg class="ico" aria-hidden="true"><use href="#i-wrap"/></svg><h3>Шаурма</h3><p>Острівець або точка</p></div>
-      <div class="fmt rv d2"><svg class="ico" aria-hidden="true"><use href="#i-cup"/></svg><h3>Кав'ярні</h3><p>Кава й випічка</p></div>
-      <div class="fmt rv d1"><svg class="ico" aria-hidden="true"><use href="#i-pizza"/></svg><h3>Піцерії</h3><p>Зал або доставка</p></div>
-      <div class="fmt rv d2"><svg class="ico" aria-hidden="true"><use href="#i-sushi"/></svg><h3>Суші</h3><p>Під доставку</p></div>
+      <div class="fmt pic rv d1"><img src="img/formats/shawarma.jpg" alt="" loading="lazy"><svg class="ico" aria-hidden="true"><use href="#i-wrap"/></svg><h3>Шаурма</h3><p>Острівець або точка</p></div>
+      <div class="fmt pic rv d2"><img src="img/formats/coffee.jpg" alt="" loading="lazy"><svg class="ico" aria-hidden="true"><use href="#i-cup"/></svg><h3>Кав'ярні</h3><p>Кава й випічка</p></div>
+      <div class="fmt pic rv d1"><img src="img/formats/pizza.jpg" alt="" loading="lazy"><svg class="ico" aria-hidden="true"><use href="#i-pizza"/></svg><h3>Піцерії</h3><p>Зал або доставка</p></div>
+      <div class="fmt pic rv d2"><img src="img/formats/sushi.jpg" alt="" loading="lazy"><svg class="ico" aria-hidden="true"><use href="#i-sushi"/></svg><h3>Суші</h3><p>Під доставку</p></div>
       <div class="fmt photo rv"><img src="img/food/skewer-wrap.jpg" alt="Шашлички в лаваші — стрітфуд" loading="lazy"><h3>Стрітфуд</h3><p>Точки й острівці</p></div>
-      <div class="fmt rv d1"><svg class="ico" aria-hidden="true"><use href="#i-bake"/></svg><h3>Пекарні</h3><p>і кондитерські</p></div>
-      <div class="fmt rv d2"><svg class="ico" aria-hidden="true"><use href="#i-cheb"/></svg><h3>Чебуречні</h3><p>Зал або формат із собою</p></div>
-      <div class="fmt rv d1"><svg class="ico" aria-hidden="true"><use href="#i-moto"/></svg><h3>Dark kitchen</h3><p>Тільки доставка</p></div>
-      <div class="fmt rv d2"><svg class="ico" aria-hidden="true"><use href="#i-plate"/></svg><h3>Кафе й ресторани</h3><p>У тому числі при ЖК</p></div>
+      <div class="fmt pic rv d1"><img src="img/formats/bakery.jpg" alt="" loading="lazy"><svg class="ico" aria-hidden="true"><use href="#i-bake"/></svg><h3>Пекарні</h3><p>і кондитерські</p></div>
+      <div class="fmt pic rv d2"><img src="img/formats/cheburek.jpg" alt="" loading="lazy"><svg class="ico" aria-hidden="true"><use href="#i-cheb"/></svg><h3>Чебуречні</h3><p>Зал або формат із собою</p></div>
+      <div class="fmt pic rv d1"><img src="img/kitchen/kitchen-before-opening.jpg" alt="" loading="lazy"><svg class="ico" aria-hidden="true"><use href="#i-moto"/></svg><h3>Dark kitchen</h3><p>Тільки доставка</p></div>
+      <div class="fmt pic rv d2"><img src="img/formats/restaurant.jpg" alt="" loading="lazy"><svg class="ico" aria-hidden="true"><use href="#i-plate"/></svg><h3>Кафе й ресторани</h3><p>У тому числі при ЖК</p></div>
+      <a class="fmt cta rv d3" href="#price"><span class="cta-k">Свій формат?</span><h3>Придумаємо концепт під вашу ідею</h3><p>Порахуйте бюджет за 30 секунд <svg aria-hidden="true"><use href="#arr"/></svg></p></a>
     </div>
   </div>
 </section>
