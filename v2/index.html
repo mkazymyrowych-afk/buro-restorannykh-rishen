@@ -1357,7 +1357,7 @@ onScroll();
   function show(k){els.forEach((e,j)=>{e.classList.toggle('on',j===k);if(j!==k)e.classList.remove('lit')});name.textContent=V[k].label;
     setTimeout(()=>els[k].classList.add('lit'),reduce?0:650)}
   layout(); addEventListener('resize',layout,{passive:true});
-  show(0);
+  show(0); els[0].classList.add('lit');
   if(!reduce){let vis=true;new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(scene);
     setInterval(()=>{if(!vis||document.hidden)return;i=(i+1)%V.length;show(i)},3200)}
 })();
