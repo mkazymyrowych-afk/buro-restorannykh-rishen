@@ -213,11 +213,11 @@ h2 em,h1 em{font-style:normal;color:var(--fire)}
 .c1{grid-row:span 2}.c2,.c3{min-height:250px}
 
 /* formats */
-.formats{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:140px;gap:12px}
+.formats{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:14px}
 .fmt{border-radius:20px;background:var(--card);border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
 .fmt:hover{border-color:var(--fire);transform:translateY(-3px)}
-.fmt h3{font-size:17.5px;position:relative;z-index:2}
-.fmt p{font-size:13.5px;color:var(--muted);position:relative;z-index:2;margin-top:2px}
+.fmt h3{font-size:20px;position:relative;z-index:2}
+.fmt p{font-size:14.5px;color:var(--muted);position:relative;z-index:2;margin-top:2px}
 .fmt .ico{position:absolute;top:16px;left:18px;color:var(--fire);width:30px;height:30px}
 .fmt.pic{border-color:rgba(255,236,214,.14)}
 .fmt.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s,filter .6s;filter:brightness(.78) saturate(1.05)}
@@ -225,7 +225,7 @@ h2 em,h1 em{font-style:normal;color:var(--fire)}
 .fmt.pic::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,11,10,.15) 0%,rgba(13,11,10,.35) 40%,rgba(13,11,10,.94) 100%);z-index:1}
 .fmt.pic .ico{z-index:2;color:#fff;background:rgba(232,50,30,.85);border-radius:10px;padding:5px;width:34px;height:34px;box-shadow:0 6px 16px -6px rgba(232,50,30,.9)}
 .fmt.pic p{color:#e3d8cc}
-.fmt.cta{grid-column:span 2;background:linear-gradient(135deg,#e8321e,#ff7a1a);border-color:transparent;justify-content:center}
+.fmt.cta{grid-column:1/-1;min-height:150px;background:linear-gradient(135deg,#e8321e,#ff7a1a);border-color:transparent;justify-content:center}
 .fmt.cta .cta-k{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.85)}
 .fmt.cta h3{font-size:20px;margin-top:6px;color:#fff}
 .fmt.cta p{color:#fff;font-weight:700;display:flex;align-items:center;gap:8px;margin-top:8px}
@@ -404,7 +404,7 @@ details p{color:var(--muted);padding:0 40px 22px 0;font-size:16px}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .seg{display:flex;gap:8px;flex-wrap:wrap}
 .seg label{margin:0;display:inline-block}
-.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg input{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px}
 .seg span{display:inline-block;border:1.5px solid var(--line2);border-radius:999px;padding:10px 16px;font-size:14.5px;font-weight:700;color:var(--muted);cursor:pointer;transition:.2s}
 .seg input:checked+span{background:var(--fire);border-color:var(--fire);color:#fff}
 .seg input:focus-visible+span{box-shadow:0 0 0 3px rgba(255,195,90,.45)}
@@ -563,6 +563,18 @@ section[id],.stagebox,#draftTitle{scroll-margin-top:90px}
 @media (max-width:900px){.hero2 .hero-grid>div:first-child{display:contents}.hero2 .eyebrow{order:1;justify-self:start}.hero2 h1{order:2}.hero2 .hstage{order:3}.hero2 .sub{order:4}.hero2 .ctas{order:5}.hero2 .stats{order:6}.hero2 .hero-grid{grid-template-columns:1fr;row-gap:18px}.hstage{max-width:560px;justify-self:center;max-height:none;margin:8px 0 18px}.hs-chef{left:8px;bottom:-24px}}
 @media (max-width:620px){.hero2 h1 .line{display:inline}.hs-chip span{display:none}.hs-chip{top:auto;bottom:12px;right:12px}.hs-chef img{width:48px;height:48px}.hs-chef b{font-size:13.5px}.hs-chef span{font-size:12px}.hstage{aspect-ratio:5/4.1}}
 @media (prefers-reduced-motion:reduce){.neonw{animation:none}}
+
+/* lead dialog (v2 feedback) */
+.lead-dlg{margin:auto;inset:0;position:fixed;width:min(560px,calc(100vw - 24px));max-height:calc(100dvh - 24px);padding:22px 0 0;overflow-x:hidden;border:1px solid rgba(255,236,214,.16);border-radius:24px;background:#120c09;color:var(--text);box-shadow:0 40px 120px -30px #000;overflow:auto}
+.lead-dlg::backdrop{background:rgba(8,5,4,.72);backdrop-filter:blur(6px)}
+.lead-dlg .dlg-k{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);padding:0 24px}
+.lead-dlg .form{opacity:1;transform:none;margin:12px 0 0;border:0;border-top:1px solid var(--line2);border-radius:0;width:100%;min-width:0}
+.lead-dlg .seg{flex-wrap:wrap}
+.dlg-x{position:absolute;top:10px;right:12px;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,236,214,.16);background:transparent;color:var(--text);font-size:24px;line-height:1;cursor:pointer}
+.dlg-x:hover{border-color:var(--fire)}
+.who-card[aria-pressed="true"]{border-color:var(--fire);background:var(--card2)}
+.dish-note{font-size:13.5px;color:var(--muted);margin-top:8px}
+@media (max-width:900px){.formats{grid-template-columns:1fr 1fr;grid-auto-rows:160px}.fmt.cta{grid-column:span 2}}
 </style>
 </head>
 <body>
@@ -652,7 +664,7 @@ section[id],.stagebox,#draftTitle{scroll-margin-top:90px}
       <h1 class="rv d1"><span class="line">Відкрию ваш заклад</span> <span class="line">так, ніби він <span class="neonw">мій</span></span></h1>
       <p class="sub rv d2">Кав'ярня, бургерна, шаурма чи ресторан — <b>під ключ від приміщення до першого гостя за 1,5–3 місяці.</b> Веде шеф, який сам щодня працює на кухні. Без франшиз і роялті.</p>
       <div class="ctas rv d3">
-        <a href="#price" class="btn btn-fire"><svg aria-hidden="true" viewBox="0 0 30 40"><use href="#flame"/></svg>Розпалити свій заклад</a>
+        <a href="#price" class="btn btn-fire"><svg aria-hidden="true" viewBox="0 0 30 40"><use href="#flame"/></svg>Порахувати свій заклад</a>
         <a href="https://t.me/Dima_Brss" target="_blank" rel="noopener" class="btn btn-ghost"><svg aria-hidden="true"><use href="#tg"/></svg>Написати шефу</a>
       </div>
       <div class="stats rv d3">
@@ -676,9 +688,9 @@ section[id],.stagebox,#draftTitle{scroll-margin-top:90px}
     <div class="head">
       <div>
         <span class="eyebrow rv">Попередній бюджет запуску</span>
-        <h2 class="rv d1">Розпаліть <em>свій заклад</em></h2>
+        <h2 class="rv d1">Порахуйте <em>свій заклад</em></h2>
       </div>
-      <p class="lead rv d2">Оберіть формат і площу, щоб оцінити бюджет. Потім запаліть вивіску та відкрийте двері свого закладу.</p>
+      <p class="lead rv d2">Оберіть формат і площу, щоб оцінити бюджет. Потім засвітіть вивіску — і побачите свій заклад у день відкриття.</p>
     </div>
     <div class="build rv">
       <div class="ctrl">
@@ -708,10 +720,10 @@ section[id],.stagebox,#draftTitle{scroll-margin-top:90px}
             <button type="button" aria-pressed="false" data-p="no">Ще шукаю</button>
           </div>
         </div>
-        <div class="ignite"><button type="button" class="btn btn-fire" id="igniteBtn"><svg aria-hidden="true" viewBox="0 0 30 40"><use href="#flame"/></svg><span>Розпалити мій заклад</span></button></div>
+        <div class="ignite"><button type="button" class="btn btn-fire" id="igniteBtn"><svg aria-hidden="true" viewBox="0 0 30 40"><use href="#flame"/></svg><span>Відкрити мій заклад</span></button></div>
       </div>
       <div class="stagebox">
-        <div class="heat" id="heat"><div>Іскра</div><div>Розпал</div><div>Жар</div><div>Вогонь</div></div>
+        <div class="heat" id="heat"><div>Формат</div><div>Площа</div><div>Приміщення</div><div>Відчинено</div></div>
         <div class="scene">
           <p class="hint" id="hint" role="status">Оберіть формат, щоб засвітити вивіску.</p>
           <div class="fac" id="fac" role="img" aria-label="Ваш майбутній заклад"></div>
@@ -724,7 +736,7 @@ section[id],.stagebox,#draftTitle{scroll-margin-top:90px}
           <div><span>Вкладення в заклад</span><b id="invOut">15–25 тис. $</b><small>ремонт, обладнання, запуск</small></div>
           <div><span>До відкриття</span><b id="termOut">1,5–3 міс.</b><small id="termNote">+ місяць супроводу</small></div>
         </div>
-        <div class="send"><p>Точну суму шеф назве після знайомства з проєктом.</p><a href="#lead" class="btn btn-ghost" id="sendBtn">Перенести розрахунок у заявку <svg aria-hidden="true"><use href="#arr"/></svg></a></div>
+        <div class="send"><p>Точну суму шеф назве після знайомства з проєктом.</p><a href="#lead" class="btn btn-ghost" id="sendBtn">Надіслати розрахунок шефу <svg aria-hidden="true"><use href="#arr"/></svg></a></div>
       </div>
     </div>
   </div>
@@ -777,7 +789,7 @@ section[id],.stagebox,#draftTitle{scroll-margin-top:90px}
         <span class="eyebrow rv">Для кого</span>
         <h2 class="rv d1">Звідки ви <em>стартуєте?</em></h2>
       </div>
-      <p class="lead rv d2">Оберіть свою ситуацію — і заявка внизу вже знатиме, з чого почати розмову.</p>
+      <p class="lead rv d2">Оберіть свою ситуацію — заявка відкриється одразу тут.</p>
     </div>
     <div class="who">
       <button class="who-card rv" data-sit="Перший заклад з нуля"><svg class="ico" aria-hidden="true"><use href="#i-spark"/></svg><h3>Є бюджет, немає досвіду</h3><p>Порахуємо, чи зійдуться цифри, і проведемо через усі етапи.</p><span class="go">Це про мене <svg aria-hidden="true"><use href="#arr"/></svg></span></button>
@@ -819,15 +831,15 @@ section[id],.stagebox,#draftTitle{scroll-margin-top:90px}
     <div class="head">
       <div>
         <span class="eyebrow rv">Що входить під ключ</span>
-        <h2 class="rv d1">Від іскри <em>до вогню</em> — 4 етапи</h2>
+        <h2 class="rv d1">4 етапи — <em>і що в кожному</em></h2>
       </div>
       <p class="lead rv d2">Вам не треба шукати й зводити між собою десяток підрядників. Проєкт веде шеф, кожен етап закриваємо командою.</p>
     </div>
     <div class="stages">
-      <article class="stage rv"><div class="flames" aria-hidden="true"><svg><use href="#flame"/></svg><svg class="off"><use href="#flame"/></svg><svg class="off"><use href="#flame"/></svg><svg class="off"><use href="#flame"/></svg></div><span class="lvl">Етап 1</span><h3>Іскра</h3><p class="what">Ідея перетворюється на цифри</p><ul><li>Бізнес-план</li><li>Підбір приміщення</li><li>Аналіз локації та аудиторії</li></ul></article>
-      <article class="stage rv d1"><div class="flames" aria-hidden="true"><svg><use href="#flame"/></svg><svg><use href="#flame"/></svg><svg class="off"><use href="#flame"/></svg><svg class="off"><use href="#flame"/></svg></div><span class="lvl">Етап 2</span><h3>Розпал</h3><p class="what">У закладу з'являється обличчя</p><ul><li>Концепція і назва</li><li>Дизайн і оформлення</li><li>Контроль ремонту й підрядників</li></ul></article>
-      <article class="stage rv d2"><div class="flames" aria-hidden="true"><svg><use href="#flame"/></svg><svg><use href="#flame"/></svg><svg><use href="#flame"/></svg><svg class="off"><use href="#flame"/></svg></div><span class="lvl">Етап 3</span><h3>Жар</h3><p class="what">Кухня готова до потоку</p><ul><li>Обладнання й постачальники</li><li>Меню і техкарти</li><li>Упаковка й уніформа</li></ul></article>
-      <article class="stage rv d3"><div class="flames" aria-hidden="true"><svg><use href="#markw"/></svg><svg><use href="#markw"/></svg><svg><use href="#markw"/></svg><svg><use href="#markw"/></svg></div><span class="lvl">Етап 4</span><h3>Вогонь</h3><p class="what">Двері відчинено — гості йдуть</p><ul><li>Підбір і навчання команди</li><li>Документи, каса, автоматизація</li><li>Просування, відкриття і місяць супроводу</li></ul></article>
+      <article class="stage rv"><span class="lvl">Етап 1 · 1–2 тижні</span><h3>Цифри й приміщення</h3><p class="what">Ще до витрат знаєте, скільки коштує заклад і чи окупиться</p><ul><li>Бізнес-план і кошторис</li><li>Пошук або аналіз приміщення</li><li>Трафік, аудиторія, конкуренти поруч</li><li>Первинний прорахунок і договір</li></ul></article>
+      <article class="stage rv d1"><span class="lvl">Етап 2 · 3–6 тижнів</span><h3>Концепція і ремонт</h3><p class="what">Заклад отримує назву, вигляд і план кухні</p><ul><li>Концепція, назва, формат подачі</li><li>Дизайн залу й вивіски</li><li>Планування кухні під меню</li><li>Контроль ремонту й підрядників</li></ul></article>
+      <article class="stage rv d2"><span class="lvl">Етап 3 · разом з ремонтом</span><h3>Кухня й меню</h3><p class="what">Кухня готова працювати в годину пік</p><ul><li>Обладнання під ваше меню</li><li>Постачальники й ціни закупівлі</li><li>Меню, техкарти, собівартість</li><li>Упаковка й уніформа</li></ul></article>
+      <article class="stage rv d3"><span class="lvl">Етап 4 · 2 тижні + 30 днів</span><h3>Команда й відкриття</h3><p class="what">Перші гості — і шеф поруч на кухні</p><ul><li>Підбір і навчання кухні й залу</li><li>Документи, каса, автоматизація</li><li>Просування до відкриття</li><li>Місяць супроводу після старту</li></ul></article>
     </div>
     <div class="extra rv">
       <p>Не потрібен весь пакет? <b>Можна замовити окремо</b> — наприклад, тільки меню з техкартами чи перезапуск діючого закладу.</p>
@@ -882,7 +894,7 @@ section[id],.stagebox,#draftTitle{scroll-margin-top:90px}
     <div class="head">
       <div>
         <span class="eyebrow rv">Формати</span>
-        <h2 class="rv d1">Що <em>розпалюємо</em></h2>
+        <h2 class="rv d1">Які заклади <em>відкриваємо</em></h2>
       </div>
       <p class="lead rv d2">Від острівця шаурми до повноцінного ресторану. Не бачите свого формату — придумаємо індивідуальний.</p>
     </div>
@@ -908,7 +920,7 @@ section[id],.stagebox,#draftTitle{scroll-margin-top:90px}
     <div class="head">
       <div>
         <span class="eyebrow rv">Чесне порівняння</span>
-        <h2 class="rv d1">Свій вогонь чи <em>чужа вивіска?</em></h2>
+        <h2 class="rv d1">Франшиза чи <em>свій заклад?</em></h2>
       </div>
     </div>
     <div class="vs rv">
@@ -940,9 +952,9 @@ section[id],.stagebox,#draftTitle{scroll-margin-top:90px}
 <section class="sec" id="dishes" style="padding-bottom:0">
   <div class="wrap dish-strip">
     <div class="rv">
-      <span class="eyebrow">Меню входить у запуск</span>
+      <span class="eyebrow">Входить у запуск під ключ</span>
       <h3 style="margin-top:14px">Меню й техкарти до відкриття</h3>
-      <p>Меню й техкарти розробляє бренд-шеф — щоб кожна страва виходила однаковою, хто б не стояв біля плити.</p>
+      <p>Меню й техкарти Дмитро розробляє сам — вони вже входять у пакет під ключ. Якщо заклад уже працює, можна замовити <b>тільки меню й техкарти</b> окремою послугою.</p><p class="dish-note">На фото — страви шефа Дмитра.</p>
     </div>
     <div class="dishes rv d1">
       <figure class="dish"><img src="../img/food/burger-black-main.jpg" alt="Чорний бургер з беконом" loading="lazy"><figcaption>Чорний бургер</figcaption></figure>
@@ -986,7 +998,7 @@ section[id],.stagebox,#draftTitle{scroll-margin-top:90px}
   <div class="wrap lead-grid">
     <div>
       <span class="eyebrow rv">Заявка</span>
-      <h2 class="rv d1">Розпалимо <em>ваш заклад?</em></h2>
+      <h2 class="rv d1">Обговоримо <em>ваш заклад?</em></h2>
       <p class="lead rv d2">Опишіть свій заклад, щоб обговорити з Дмитром бюджет і перші кроки.</p>
     </div>
     <form class="form rv" id="leadForm">
@@ -1022,6 +1034,12 @@ section[id],.stagebox,#draftTitle{scroll-margin-top:90px}
 </section>
 
 </main>
+
+<dialog class="lead-dlg" id="leadDlg" aria-labelledby="dlgTitle">
+  <button type="button" class="dlg-x" id="dlgClose" aria-label="Закрити">×</button>
+  <p class="dlg-k" id="dlgTitle">Заявка шефу Дмитру</p>
+  <div id="dlgSlot"></div>
+</dialog>
 
 <footer>
   <div class="wrap">
@@ -1126,7 +1144,8 @@ $$('.who-card').forEach(b=>b.addEventListener('click',()=>{
   showDraft(false);
   const r=$(`#sitSeg input[value="${b.dataset.sit}"]`); if(r)r.checked=true;
   transferredPremises=null;
-  lead.scrollIntoView({behavior:reduce?'auto':'smooth'});
+  $$('.who-card').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  openLead();
 }));
 
 /* kitchen video: play only when visible */
@@ -1225,7 +1244,7 @@ function render(){
   iOut.textContent=quote.investment;
   tOut.textContent=quote.term;
   tNote.textContent=S.prem==='no'?'підбір приміщення · місяць супроводу':'+ місяць супроводу';
-  const message=S.lit?'Відчинено! Перейдіть до заявки з розрахунком.':S.ft?'Змініть площу й розпаліть заклад.':'Оберіть формат, щоб засвітити вивіску.';
+  const message=S.lit?'Відчинено! Надішліть розрахунок шефу.':S.ft?'Змініть площу й відкрийте заклад.':'Оберіть формат, щоб засвітити вивіску.';
   if(hint.textContent!==message)hint.textContent=message;
 
 }
@@ -1245,7 +1264,7 @@ $$('#fchips .fchip').forEach(c=>c.addEventListener('click',()=>{
   if(S.f===c.dataset.f)return;
   clearTimeout(burstTimer);
   S.f=c.dataset.f; S.s=c.dataset.s; S.icon=c.querySelector('use').getAttribute('href'); S.ft=true; S.lit=false;
-  igBtn.querySelector('span').textContent='Розпалити мій заклад';
+  igBtn.querySelector('span').textContent='Відкрити мій заклад';
   $('#sendBtn').classList.replace('btn-fire','btn-ghost');
   render();
   if(!reduce)fac.animate([{opacity:.32,transform:'translateY(9px)'},{opacity:1,transform:'none'}],{duration:340,easing:'ease-out'});
@@ -1256,7 +1275,7 @@ $$('#prem button').forEach(b=>b.addEventListener('click',()=>{
 }));
 igBtn.addEventListener('click',()=>{
   if(!S.ft){
-    hint.textContent='Спочатку оберіть формат, щоб розпалити заклад.';
+    hint.textContent='Спочатку оберіть формат закладу.';
     $('#fchips .fchip').focus();
     return;
   }
@@ -1294,7 +1313,21 @@ function showDraft(show){
   formBody.hidden=show;
   $('#draft').hidden=!show;
 }
-$('#sendBtn').addEventListener('click',()=>{
+const dlg=$('#leadDlg'), formHome=document.createComment('lead-form');
+form.before(formHome);
+function openLead(){
+  if(!dlg||!dlg.showModal){lead.scrollIntoView({behavior:reduce?'auto':'smooth'});return}
+  $('#dlgSlot').appendChild(form); form.classList.add('in');
+  if(!dlg.open)dlg.showModal();
+  formatField.focus({preventScroll:true});
+}
+if(dlg){
+  dlg.addEventListener('close',()=>formHome.after(form));
+  $('#dlgClose').addEventListener('click',()=>dlg.close());
+  dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+}
+$('#sendBtn').addEventListener('click',e=>{
+  e.preventDefault();
   showDraft(false);
   if(S.f)formatField.value=S.f;
   areaField.value=S.area;
@@ -1305,6 +1338,7 @@ $('#sendBtn').addEventListener('click',()=>{
   transferred=true;
   transferredPremises=S.prem;
   updateSummary();
+  openLead();
 });
 formatField.addEventListener('input',updateSummary);
 areaField.addEventListener('input',updateSummary);
