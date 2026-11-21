@@ -1,0 +1,1366 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Бюро ресторанних рішень — заклад під ключ від бренд-шефа (варіант 2)</title>
+<meta name="description" content="Відкриваємо кав'ярні, бургерні, шаурму, піцерії та ресторани під ключ по всій Україні. Бренд-шеф з 2012 року, 20+ закладів, 1,5–3 місяці до відкриття, місяць супроводу.">
+<meta property="og:title" content="Бюро ресторанних рішень — заклад під ключ від бренд-шефа">
+<meta property="og:description" content="Від приміщення до першого гостя за 1,5–3 місяці. 20+ закладів по Україні. Без роялті.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mkazymyrowych-afk.github.io/buro-restorannykh-rishen/v2/">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:image" content="https://mkazymyrowych-afk.github.io/buro-restorannykh-rishen/img/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://mkazymyrowych-afk.github.io/buro-restorannykh-rishen/v2/">
+<meta name="theme-color" content="#0d0b0a">
+<link rel="icon" href="../img/logo/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0b0a; --bg2:#14110f; --card:#1b1714; --card2:#231d18;
+  --line:rgba(255,236,214,.10); --line2:rgba(255,236,214,.18);
+  --text:#f5efe6; --muted:#b9ad9e; --dim:#80766b;
+  --fire:#ff6a1a; --red:#e8321e; --gold:#ffc35a;
+  --grad:linear-gradient(135deg,#ff8a2a,#e8321e);
+  --r:22px; --pad:clamp(16px,4vw,32px);
+  --display:"Geologica","Arial Black",sans-serif;
+  --body:"Geologica",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden}
+main,footer{overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--pad)}
+.sec{padding:clamp(64px,9vw,120px) 0;position:relative}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--fire);display:inline-flex;align-items:center;gap:10px;font-weight:700}
+.eyebrow::before{content:"";width:22px;height:2px;background:currentColor}
+h1,h2{font-family:var(--display);font-weight:800;line-height:1.06;letter-spacing:-.025em}
+h3{font-family:var(--body);font-weight:800;line-height:1.25}
+h2{font-size:clamp(28px,4.2vw,52px);margin-top:16px}
+h2 em,h1 em{font-style:normal;color:var(--fire)}
+.lead{color:var(--muted);font-size:clamp(16.5px,1.5vw,18.5px);max-width:600px;margin-top:16px}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;margin-bottom:clamp(32px,4.5vw,54px)}
+.head .lead{margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:16px 30px;border-radius:999px;font-weight:800;font-size:17px;transition:transform .2s,box-shadow .2s,background .2s,color .2s;white-space:nowrap}
+.btn-fire{background:var(--grad);color:#fff;box-shadow:0 12px 32px -10px rgba(232,50,30,.8)}
+.btn-fire:hover{transform:translateY(-2px);box-shadow:0 18px 40px -10px rgba(255,106,26,.85)}
+.btn-ghost{border:1.5px solid var(--line2);color:var(--text)}
+.btn-ghost:hover{border-color:var(--fire);color:var(--gold)}
+.btn svg{width:20px;height:20px;flex:none}
+.ico{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+/* header */
+.hdr{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.hdr.solid{background:rgba(13,11,10,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand svg.mark{width:30px;height:42px;flex:none}
+.brand b{font-family:var(--display);font-weight:900;font-size:21px;letter-spacing:.06em;display:block;line-height:1}
+.brand small{font-size:10px;letter-spacing:.22em;color:var(--fire);display:block;margin-top:5px;font-weight:700}
+.nav{display:flex;gap:26px;font-weight:600;font-size:15px;color:var(--muted)}
+.nav a:hover{color:var(--text)}
+.hdr .btn{min-height:46px;padding:11px 20px;font-size:15px}
+.burger{display:none;width:46px;height:46px;border-radius:12px;border:1px solid var(--line2);align-items:center;justify-content:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:18px;height:2px;background:var(--text);position:relative;transition:.3s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.menu-open .burger span{background:transparent}
+.menu-open .burger span::before{top:0;transform:rotate(45deg)}
+.menu-open .burger span::after{top:0;transform:rotate(-45deg)}
+.mnav{display:none}
+
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:center;padding:112px 0 54px;position:relative;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:auto -10% -30% -10%;height:70%;background:radial-gradient(60% 60% at 50% 100%,rgba(232,50,30,.32),rgba(255,106,26,.1) 45%,transparent 70%);z-index:-2}
+#sparks{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,72px);align-items:center}
+.hero h1{font-size:clamp(34px,min(4.4vw,8.4vh),66px);margin-top:20px}
+.hero p.sub{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:560px;margin-top:22px}
+.hero p.sub b{color:var(--text);font-weight:700}
+.ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;margin-top:28px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;max-width:640px}
+.stat{background:var(--bg);padding:16px}
+.stat b{font-family:var(--display);font-weight:800;font-size:clamp(21px,2.2vw,28px);display:block;line-height:1}
+.stat span{font-size:13px;color:var(--muted);display:block;margin-top:8px;line-height:1.35}
+.hero-vis{position:relative;aspect-ratio:4/5;max-height:68vh;justify-self:end;width:100%}
+.hero-vis .main{position:absolute;inset:0;border-radius:28px;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.9),0 0 0 1px var(--line)}
+.hero-vis .main img{width:100%;height:100%;object-fit:cover;object-position:35% 50%;transform:scale(1.04)}
+.hero-vis .main::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(13,11,10,.7))}
+.hero-vis .tag{position:absolute;right:18px;bottom:16px;z-index:2;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;background:rgba(13,11,10,.72);backdrop-filter:blur(8px);padding:9px 14px;border-radius:999px;border:1px solid var(--line2);font-weight:700}
+
+
+
+
+
+
+
+
+
+/* pains */
+.pains{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pain{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:border-color .3s,transform .3s}
+.pain:hover{border-color:rgba(255,106,26,.5);transform:translateY(-3px)}
+.pain .bad{padding:24px 24px 20px;position:relative}
+.pain .bad .n{font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.1em;font-weight:700}
+.pain .bad h3{font-size:19px;margin-top:10px}
+.pain .bad p{color:var(--muted);font-size:15px;margin-top:6px}
+.pain .bad .smoke{position:absolute;right:20px;top:20px;width:30px;height:30px;color:var(--dim)}
+.pain .fix{margin-top:auto;padding:16px 24px 20px;background:linear-gradient(90deg,rgba(255,106,26,.13),rgba(255,106,26,.03));border-top:1px dashed rgba(255,106,26,.35);display:flex;gap:12px;align-items:flex-start;font-size:15px;font-weight:600}
+.pain .fix svg{width:16px;height:22px;flex:none;margin-top:1px}
+
+/* who */
+.who{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.who-card{text-align:left;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:10px;transition:.3s;position:relative;min-height:230px}
+.who-card:hover,.who-card:focus-visible{border-color:var(--fire);background:var(--card2);outline:none}
+.who-card .ico{color:var(--fire)}
+.who-card h3{font-size:19px}
+.who-card p{color:var(--muted);font-size:15px}
+.who-card .go{margin-top:auto;font-weight:700;font-size:14.5px;color:var(--gold);display:flex;align-items:center;gap:8px}
+.who-card .go svg{width:16px;height:16px;transition:transform .3s}
+.who-card:hover .go svg{transform:translateX(4px)}
+
+/* chef */
+.chef-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(36px,6vw,84px);align-items:center}
+.chef-pic{position:relative}
+.chef-pic .frame{border-radius:30px;overflow:hidden;aspect-ratio:4/5;position:relative}
+.chef-pic .frame img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.chef-pic::before{content:"";position:absolute;inset:22px -22px -22px 22px;border:2px solid var(--fire);border-radius:30px;z-index:-1}
+.chef-name{font-size:15px;color:var(--muted);margin-top:18px}
+.chef-name b{color:var(--text)}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px}
+.fact b{font-family:var(--display);font-weight:800;font-size:23px;display:block;color:var(--gold);line-height:1.1}
+.fact span{font-size:14.5px;color:var(--muted);display:block;margin-top:8px;line-height:1.45}
+.quote{margin-top:28px;padding:22px 26px;border-left:3px solid var(--fire);background:linear-gradient(90deg,rgba(255,106,26,.09),transparent);border-radius:0 18px 18px 0}
+.quote p{font-size:clamp(18px,1.8vw,21px);line-height:1.45;font-weight:600}
+.quote cite{display:block;font-style:normal;color:var(--muted);font-size:14px;margin-top:10px}
+
+/* stages (fire scale) */
+.stages-sec{background:var(--bg2)}
+.stages{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stage{border-radius:var(--r);padding:26px 22px 24px;border:1px solid var(--line);display:flex;flex-direction:column;position:relative;overflow:hidden;min-height:340px}
+.stage:nth-child(1){background:#1a1613}
+.stage:nth-child(2){background:linear-gradient(180deg,#221812,#1a1512)}
+.stage:nth-child(3){background:linear-gradient(180deg,#3a1a10,#1d1410)}
+.stage:nth-child(4){background:linear-gradient(180deg,#e8321e,#9c1f10);border-color:transparent}
+.stage .flames{display:flex;gap:4px;height:26px}
+.stage .flames svg{width:18px;height:26px}
+.stage .flames svg.off{opacity:.18;filter:grayscale(1)}
+.stage .lvl{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--muted);margin-top:18px;font-weight:700;text-transform:uppercase}
+.stage h3{font-family:var(--display);font-weight:800;font-size:30px;margin-top:4px}
+.stage .what{font-size:15px;color:var(--muted);margin-top:4px}
+.stage ul{list-style:none;margin-top:auto;padding-top:20px;display:grid;gap:9px}
+.stage li{font-size:15px;display:flex;gap:10px;align-items:flex-start;line-height:1.4}
+.stage li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--fire);margin-top:7px}
+.stage:nth-child(4) .lvl,.stage:nth-child(4) .what{color:rgba(255,255,255,.85)}
+.stage:nth-child(4) li::before{background:#fff}
+.extra{margin-top:16px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px 26px}
+.extra p{font-size:17px;max-width:640px}
+.extra p b{color:var(--gold)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1px solid var(--line2);border-radius:999px;padding:9px 16px;font-size:14px;font-weight:600;color:var(--muted)}
+
+/* steps */
+.toggle{display:inline-flex;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px;gap:4px}
+.toggle button{padding:12px 22px;border-radius:999px;font-weight:700;font-size:15px;color:var(--muted);transition:.25s}
+.toggle button[aria-pressed="true"]{background:var(--text);color:var(--bg)}
+.steps-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,80px);align-items:start}
+.timeline{list-style:none;position:relative;padding-left:46px}
+.timeline::before{content:"";position:absolute;left:15px;top:8px;bottom:30px;width:2px;background:var(--line2)}
+.timeline .fill{position:absolute;left:15px;top:8px;width:2px;background:linear-gradient(var(--gold),var(--red));height:0;max-height:calc(100% - 38px)}
+.timeline li{position:relative;padding:0 0 26px}
+.timeline li::before{content:attr(data-n);position:absolute;left:-46px;top:0;width:32px;height:32px;border-radius:50%;background:var(--bg);border:2px solid var(--line2);display:grid;place-items:center;font-family:var(--mono);font-size:12px;font-weight:700;color:var(--muted);transition:.3s}
+.timeline li.on::before{border-color:var(--fire);color:#fff;background:var(--fire);box-shadow:0 0 18px rgba(255,106,26,.6)}
+.timeline h3{font-size:18.5px}
+.timeline p{color:var(--muted);font-size:15.5px;margin-top:3px}
+.timeline li[hidden]{display:none}
+.steps-side{position:sticky;top:110px}
+.kitchen{border-radius:26px;overflow:hidden;position:relative;aspect-ratio:5/6}
+.kitchen img,.kitchen video{width:100%;height:100%;object-fit:cover;display:block}
+.kitchen .vtag{position:absolute;left:18px;top:18px;z-index:2;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(13,11,10,.72);backdrop-filter:blur(8px);padding:8px 13px;border-radius:999px;border:1px solid var(--line2)}
+.kitchen .vtag i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--red);margin-right:8px;box-shadow:0 0 10px var(--red);animation:pulse 1.6s infinite}
+.kitchen::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,11,10,.05),rgba(13,11,10,.88))}
+.kitchen .cap{position:absolute;left:24px;right:24px;bottom:24px;z-index:2}
+.kitchen .cap b{font-size:clamp(19px,1.9vw,24px);display:block;line-height:1.25;font-weight:800}
+.kitchen .cap span{color:var(--muted);font-size:15px;display:block;margin-top:8px}
+.term{display:flex;gap:12px;margin-top:14px}
+.term div{flex:1;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px}
+.term b{font-family:var(--display);font-weight:800;font-size:21px;color:var(--gold);display:block}
+.term span{font-size:13.5px;color:var(--muted)}
+
+/* cases */
+.cases{display:grid;grid-template-columns:1.25fr 1fr;gap:16px}
+.case{position:relative;border-radius:24px;overflow:hidden;min-height:330px;display:flex;align-items:flex-end;isolation:isolate}
+.case img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .7s}
+.case:hover img{transform:scale(1.05)}
+.case::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,11,10,0) 35%,rgba(13,11,10,.95));z-index:-1}
+.case .in{padding:24px;width:100%}
+.case .kind{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.case h3{font-family:var(--display);font-weight:800;font-size:clamp(22px,2.3vw,30px);margin-top:6px}
+.case p{color:#ddd3c7;font-size:15px;margin-top:6px;max-width:460px}
+.case .map{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:13.5px;font-weight:700;border:1px solid rgba(255,255,255,.3);padding:7px 13px;border-radius:999px;background:rgba(13,11,10,.45);backdrop-filter:blur(6px);transition:.2s}
+.case .map:hover{border-color:var(--fire);color:var(--gold)}
+.case .map svg{width:14px;height:14px}
+.c1{grid-row:span 2}.c2,.c3{min-height:250px}
+
+/* formats */
+.formats{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:140px;gap:12px}
+.fmt{border-radius:20px;background:var(--card);border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
+.fmt:hover{border-color:var(--fire);transform:translateY(-3px)}
+.fmt h3{font-size:17.5px;position:relative;z-index:2}
+.fmt p{font-size:13.5px;color:var(--muted);position:relative;z-index:2;margin-top:2px}
+.fmt .ico{position:absolute;top:16px;left:18px;color:var(--fire);width:30px;height:30px}
+.fmt.pic{border-color:rgba(255,236,214,.14)}
+.fmt.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s,filter .6s;filter:brightness(.78) saturate(1.05)}
+.fmt.pic:hover img{transform:scale(1.07);filter:brightness(.9) saturate(1.1)}
+.fmt.pic::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,11,10,.15) 0%,rgba(13,11,10,.35) 40%,rgba(13,11,10,.94) 100%);z-index:1}
+.fmt.pic .ico{z-index:2;color:#fff;background:rgba(232,50,30,.85);border-radius:10px;padding:5px;width:34px;height:34px;box-shadow:0 6px 16px -6px rgba(232,50,30,.9)}
+.fmt.pic p{color:#e3d8cc}
+.fmt.cta{grid-column:span 2;background:linear-gradient(135deg,#e8321e,#ff7a1a);border-color:transparent;justify-content:center}
+.fmt.cta .cta-k{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.85)}
+.fmt.cta h3{font-size:20px;margin-top:6px;color:#fff}
+.fmt.cta p{color:#fff;font-weight:700;display:flex;align-items:center;gap:8px;margin-top:8px}
+.fmt.cta p svg{width:18px;height:18px;transition:transform .3s}
+.fmt.cta:hover p svg{transform:translateX(5px)}
+.fmt.photo{grid-column:span 2;grid-row:span 2}
+.fmt.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.fmt.photo:hover img{transform:scale(1.06)}
+.fmt.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(13,11,10,.92))}
+.fmt.photo h3{font-family:var(--display);font-weight:800;font-size:24px}
+
+/* vs */
+.vs{display:grid;grid-template-columns:1fr 1fr;border-radius:26px;overflow:hidden;border:1px solid var(--line)}
+.vs-col{padding:clamp(22px,3.5vw,42px)}
+.vs-col.bad{background:var(--card)}
+.vs-col.good{background:linear-gradient(160deg,#2a1510,#1b0e0b 60%);box-shadow:inset 0 0 0 1.5px rgba(255,106,26,.55)}
+.vs-col h3{font-family:var(--display);font-weight:800;font-size:clamp(20px,2.1vw,27px);display:flex;align-items:center;gap:12px}
+.vs-col ul{list-style:none;margin-top:22px}
+.vs-col li{padding:14px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:28px 1fr;gap:12px;font-size:16px}
+.vs-col li small{display:block;color:var(--dim);font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px;font-weight:700}
+.vs-col.bad li{color:var(--muted)}
+.mk{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:800;margin-top:2px}
+.bad .mk{background:rgba(255,255,255,.07);color:var(--dim)}
+.good .mk{background:var(--fire);color:#fff}
+
+/* price / build-your-venue */
+.price-sec{background:var(--bg2)}
+.build{display:grid;grid-template-columns:minmax(306px,.62fr) minmax(0,1fr);border:1px solid var(--line2);border-radius:28px;overflow:hidden;background:#171310;isolation:isolate}
+.ctrl,.stagebox,.estimate{min-width:0}
+.ctrl{padding:clamp(20px,2.8vw,32px);display:flex;flex-direction:column;gap:22px;border-right:1px solid var(--line2)}
+.step-h{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.step-h i{font-style:normal;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:13px;border:1.5px solid var(--line2);color:var(--muted);transition:.3s;flex:none}
+.step-h.done i{background:var(--fire);border-color:var(--fire);color:#fff;box-shadow:0 0 14px rgba(255,106,26,.5)}
+.step-h b{font-size:17px}
+.fchips{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.fchip{border:1.5px solid var(--line2);border-radius:14px;padding:11px 4px 9px;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--muted);transition:.2s;line-height:1.2}
+.fchip svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.fchip:hover{border-color:var(--fire);color:var(--text)}
+.fchip[aria-pressed="true"]{background:rgba(255,106,26,.14);border-color:var(--fire);color:var(--text)}
+.fchip[aria-pressed="true"] svg{color:var(--fire)}
+.area-row{display:flex;align-items:baseline;gap:8px}
+.area-val{font-family:var(--display);font-weight:900;letter-spacing:-.03em;font-size:clamp(40px,4.6vw,58px);line-height:1}
+.area-val small{font-family:var(--body);font-size:.36em;color:var(--muted);font-weight:700;margin-left:6px}
+.lbl{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:12px;font-weight:700}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:8px;border-radius:8px;background:linear-gradient(90deg,var(--fire) var(--p,25%),rgba(255,255,255,.1) var(--p,25%));margin:18px 0 8px;outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:#fff;border:6px solid var(--fire);box-shadow:0 4px 14px rgba(0,0,0,.5);cursor:grab}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:6px solid var(--fire);cursor:grab}
+input[type=range]:focus-visible{box-shadow:0 0 0 3px rgba(255,195,90,.45)}
+.scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;color:var(--dim)}
+.prem{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.prem button{border:1.5px solid var(--line2);border-radius:14px;padding:13px 10px;font-weight:700;font-size:15px;color:var(--muted);transition:.2s}
+.prem button[aria-pressed="true"]{background:var(--text);color:var(--bg);border-color:var(--text)}
+.ignite{margin-top:auto}
+.ignite .btn{width:100%;font-size:18px;min-height:64px}
+.ignite .btn svg{width:18px;height:24px}
+.stagebox{position:relative;display:flex;flex-direction:column;min-height:470px;isolation:isolate;background:#191310}
+.stagebox::before,.stagebox::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none}
+.stagebox::before{background:linear-gradient(#d6a17716 1px,transparent 1px),linear-gradient(90deg,#d6a17716 1px,transparent 1px),radial-gradient(ellipse at 50% 63%,#38271b,transparent 68%);background-size:28px 28px,28px 28px,100% 100%;mask-image:linear-gradient(transparent,#000 30%,#000 78%,transparent)}
+.stagebox::after{background:radial-gradient(ellipse at 50% 74%,color-mix(in srgb,var(--venue-light,#ffac69) 30%,transparent),#5b22116b 36%,transparent 72%);opacity:0;transition:opacity .65s}
+.stagebox[data-stage="3"]::after{opacity:.48}
+.stagebox[data-stage="4"]::after{opacity:1}
+.heat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;padding:22px 24px 0;z-index:1}
+.heat div{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#b6a899;padding-top:7px;border-top:2px solid #d3a17838;transition:color .35s,border-color .35s}
+.heat div.on{color:var(--gold);border-color:var(--fire)}
+.heat div[aria-current]{color:#ffe8bb;border-color:#ffbf65;box-shadow:0 -9px 11px -10px var(--fire)}
+.scene{position:relative;display:grid;align-content:end;flex:1;min-height:340px}
+.scene svg.fac{display:block;width:100%;height:auto;max-height:420px}
+.scene .hint{position:relative;z-index:1;text-align:center;font-size:13px;color:#e5cdb8;padding:13px 14px 0;min-height:37px}
+#burst{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.estimate{grid-column:1/-1;border-top:1px solid var(--line2);background:#1f1813}
+.out{display:grid;grid-template-columns:1fr 1fr 1fr}
+.out div{min-width:0;padding:19px clamp(14px,2.3vw,30px);border-right:1px solid var(--line)}
+.out div:last-child{border-right:0}
+.out span{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#d8bfa7;font-weight:700}
+.out b{display:block;font-weight:800;font-size:clamp(16px,2.05vw,28px);margin-top:6px;overflow-wrap:anywhere}
+.out b.big{color:var(--gold)}
+.out small{display:block;color:var(--muted);font-size:12px;margin-top:3px;line-height:1.35}
+.send{padding:13px clamp(14px,2.3vw,30px);display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;border-top:1px solid var(--line)}
+.send p{font-size:13px;color:var(--muted)}
+.send .btn{min-height:48px;padding:10px 19px;font-size:14px;white-space:normal}
+.fac .sign{fill:#171413;stroke:#a3856f;transition:stroke .35s}
+.fac .signtxt{fill:#dbc5ad;font-family:Geologica,sans-serif;font-weight:800;letter-spacing:1.35px;transition:fill .35s}
+.fac .glass{fill:#201c1b;stroke:#bd9d81;transition:fill .65s}
+.fac .lighting,.fac .opening{opacity:0;transition:opacity .55s}
+.fac .opening{transition-delay:.26s}
+.fac .door-leaf{transform-box:fill-box;transform-origin:left center;transition:transform .72s cubic-bezier(.2,.7,.2,1) .15s}
+.fac.lv2 .sign{stroke:var(--trim)}
+.fac.lv2 .signtxt{fill:#fff0d7;filter:drop-shadow(0 0 4px var(--trim))}
+.fac.lv3 .glass{fill:url(#warm)}
+.fac.lv3 .lighting,.fac.lv4 .opening{opacity:1}
+.fac.lv4 .door-leaf{transform:scaleX(.23) skewY(12deg)}
+.venue-icon{fill:none;stroke:var(--trim);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.scene .fac{position:relative;width:100%;height:clamp(300px,33vw,430px);overflow:hidden;background:#0d0806;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 13%,#000 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 13%,#000 100%)}
+.pf{position:absolute;inset:0;opacity:0;transition:opacity .55s ease;pointer-events:none}
+.pf.on{opacity:1}
+.pf img{position:absolute;max-width:none;filter:brightness(.26) saturate(.45);transition:filter .9s ease}
+.pf-sign{position:absolute;display:grid;place-items:center;border-radius:4px;transition:box-shadow .6s}
+.pf-sign b{font-family:var(--display);font-weight:900;letter-spacing:.12em;color:#7a6556;white-space:nowrap;line-height:1;transition:color .45s,text-shadow .45s}
+.pf-open{position:absolute;transform:translate(-50%,-10px);opacity:0;background:#e8321e;color:#fff;font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:.08em;padding:4px 9px;border-radius:4px;box-shadow:0 6px 18px -6px #e8321e;transition:opacity .5s .25s,transform .7s .25s cubic-bezier(.3,1.6,.5,1);white-space:nowrap}
+.pf-open::before,.pf-open::after{content:"";position:absolute;bottom:100%;width:1px;height:12px;background:#ffc35a}
+.pf-open::before{left:22%}.pf-open::after{right:22%}
+.pf-flame{position:absolute;width:26px;height:36px;transform:translate(-50%,-100%) scale(.2);transform-origin:50% 100%;opacity:0;transition:opacity .5s,transform .8s cubic-bezier(.3,1.6,.5,1)}
+.pf-glow{position:absolute;border-radius:50%;background:radial-gradient(closest-side,rgba(255,138,42,.55),rgba(255,106,26,.18) 55%,transparent);opacity:0;transition:opacity 1s;mix-blend-mode:screen}
+.fac.lv2 .pf img{filter:brightness(.42) saturate(.65)}
+.fac.lv2 .pf-sign{box-shadow:0 0 0 1.5px #ff7a1a,0 0 22px -2px rgba(255,106,26,.75),inset 0 0 18px -4px rgba(255,106,26,.5)}
+.fac.lv2 .pf-sign b{color:#ffe6bd;text-shadow:0 0 6px #ff8a2a,0 0 16px #ff6a1a,0 0 30px rgba(232,50,30,.8)}
+.fac.lv2 .pf-sign.flick b{animation:flick 1s steps(1) 1}
+@keyframes flick{0%{opacity:.2}12%{opacity:1}18%{opacity:.3}30%{opacity:1}36%{opacity:.5}48%,100%{opacity:1}}
+.fac.lv3 .pf img{filter:brightness(.82) saturate(.95)}
+.fac.lv3 .pf-glow{opacity:.55}
+.fac.lv4 .pf img{filter:brightness(1.06) saturate(1.1)}
+.fac.lv4 .pf-glow{opacity:1}
+.fac.lv4 .pf-open{opacity:1;transform:translate(-50%,0)}
+.fac.lv4 .pf-flame{opacity:1;transform:translate(-50%,-100%) scale(1)}
+.pf-note{position:absolute;right:14px;bottom:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:#8a7a6c;text-transform:uppercase}
+@media (max-width:620px){.scene .fac{height:250px}.pf-open{font-size:9px;padding:3px 7px}}
+.calc-sum{display:flex;gap:10px;align-items:center;background:rgba(255,106,26,.12);border:1px solid rgba(255,106,26,.4);border-radius:14px;padding:10px 14px;font-size:14px;font-weight:700;margin-top:14px}
+.calc-sum svg{width:16px;height:22px;flex:none}
+.calc-sum[hidden]{display:none}
+@media (max-width:900px){
+  .build{grid-template-columns:minmax(0,1fr)}
+  .ctrl{border-right:0;border-bottom:1px solid var(--line2)}
+  .stagebox{min-height:0}
+  .scene{min-height:0}
+}
+@media (max-width:620px){
+  .fchips{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+  .fchip{font-size:11.5px;padding:10px 2px 8px;overflow-wrap:anywhere}
+  .out{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .out div{padding:13px 12px}
+  .out div:last-child{grid-column:1/-1;border-top:1px solid var(--line)}
+  .out div:nth-child(2){border-right:0}
+  .out b{font-size:clamp(14px,4.25vw,18px)}
+  .heat{padding:14px 14px 0}
+  .heat div{font-size:10px}
+  .send .btn{width:100%}
+}
+
+/* dishes */
+.dish-strip{display:grid;grid-template-columns:.8fr 2.2fr;gap:clamp(24px,4vw,56px);align-items:center}
+.dish-strip h3{font-family:var(--display);font-weight:800;font-size:clamp(24px,2.6vw,34px);line-height:1.15}
+.dish-strip p{color:var(--muted);margin-top:12px;font-size:16px}
+.dishes{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:thin;scrollbar-color:var(--fire) transparent}
+.dish{flex:0 0 clamp(170px,17vw,210px);scroll-snap-align:start;position:relative;border-radius:18px;overflow:hidden;aspect-ratio:3/4}
+.dish img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.dish:hover img{transform:scale(1.06)}
+.dish figcaption{position:absolute;left:10px;right:10px;bottom:10px;background:rgba(13,11,10,.74);backdrop-filter:blur(8px);border-radius:10px;padding:8px 12px;font-weight:700;font-size:13.5px}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,6vw,90px)}
+.faq-grid>div:first-child{align-self:start;position:sticky;top:110px}
+details{border-bottom:1px solid var(--line)}
+details:first-child{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-weight:700;font-size:clamp(17px,1.6vw,19px)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:28px;line-height:1;color:var(--fire);transition:transform .3s;flex:none;font-weight:400}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);padding:0 40px 22px 0;font-size:16px}
+.tg-card{margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px}
+.tg-card p{color:var(--muted);font-size:15.5px;margin:6px 0 16px}
+.tg-card b{font-size:18px}
+
+/* lead */
+.lead-sec{position:relative;overflow:hidden;isolation:isolate}
+.lead-bg{position:absolute;inset:0;z-index:-1}
+.lead-bg img{width:100%;height:100%;object-fit:cover;object-position:70% 50%;opacity:.5}
+.lead-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 30%,rgba(13,11,10,.7) 65%,rgba(13,11,10,.4))}
+.lead-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px);align-items:center}
+.form{background:rgba(27,23,20,.93);backdrop-filter:blur(12px);border:1px solid var(--line2);border-radius:28px;padding:clamp(22px,3.5vw,38px)}
+.form h3{font-size:23px}
+.form .hint{color:var(--muted);font-size:14.5px;margin-top:4px}
+.field{margin-top:16px}
+.field label,.field .fl{display:block;font-size:13.5px;font-weight:700;color:var(--muted);margin-bottom:7px}
+.field input,.field select{width:100%;background:var(--bg);border:1.5px solid var(--line2);border-radius:14px;padding:14px 16px;color:var(--text);font:inherit;font-size:16px;transition:border-color .2s;min-height:52px}
+.field input:focus,.field select:focus{outline:none;border-color:var(--fire)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg label{margin:0;display:inline-block}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg span{display:inline-block;border:1.5px solid var(--line2);border-radius:999px;padding:10px 16px;font-size:14.5px;font-weight:700;color:var(--muted);cursor:pointer;transition:.2s}
+.seg input:checked+span{background:var(--fire);border-color:var(--fire);color:#fff}
+.seg input:focus-visible+span{box-shadow:0 0 0 3px rgba(255,195,90,.45)}
+.form .btn{width:100%;margin-top:22px}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:44px 0 28px}
+.foot{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;align-items:center}
+.foot .soc{display:flex;gap:10px;flex-wrap:wrap}
+.foot .soc a{border:1px solid var(--line2);border-radius:999px;padding:10px 16px;font-size:14px;font-weight:700;color:var(--muted)}
+.foot .soc a:hover{color:var(--text);border-color:var(--fire)}
+.copy{color:var(--dim);font-size:13px;margin-top:28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+.fab{position:fixed;left:16px;right:16px;bottom:14px;z-index:40;display:none;transform:translateY(130%);transition:transform .35s}
+.fab.show{transform:none}
+.fab .btn{width:100%}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}
+
+@media (max-width:1080px){
+  .nav{display:none}
+  .burger{display:flex}
+  .hdr .btn{display:none}
+  .mnav{display:flex;flex-direction:column;position:fixed;inset:76px 0 auto;background:rgba(13,11,10,.97);border-bottom:1px solid var(--line);padding:10px var(--pad) 24px;transform:translateY(-120%);transition:transform .35s;z-index:49}
+  .menu-open .mnav{transform:none}
+  .mnav a{padding:16px 0;border-bottom:1px solid var(--line);font-weight:700;font-size:18px}
+  .mnav .btn{margin-top:18px}
+  .who,.stages{grid-template-columns:1fr 1fr}
+  .pains{grid-template-columns:1fr 1fr}
+  .formats{grid-template-columns:repeat(4,1fr)}
+  .dish-strip{grid-template-columns:1fr}
+}
+@media (max-width:900px){
+  body{font-size:16px}
+  .hero{padding-top:100px}
+  .hero-grid,.chef-grid,.steps-grid,.faq-grid,.lead-grid,.calc,.vs{grid-template-columns:1fr}
+  .hero-vis{max-width:460px;justify-self:center;max-height:none}
+  .hero{min-height:auto}
+  .chef-pic{max-width:440px;margin:0 auto 30px}
+  .chef-pic::before{inset:14px -12px -14px 14px}
+  .steps-side{position:static}
+  .faq-grid>div:first-child{position:static}
+  .kitchen{aspect-ratio:4/3}
+  .cases{grid-template-columns:1fr}
+  .cases .case{grid-row:auto;min-height:270px}
+  .inc{grid-template-columns:1fr}
+  .fab{display:block}
+  .lead-bg::after{background:linear-gradient(180deg,rgba(13,11,10,.6),var(--bg) 45%)}
+}
+@media (max-width:620px){
+    .hero h1{font-size:clamp(30px,8.6vw,38px)}
+  .eyebrow{font-size:11.5px}
+  .who,.stages,.pains{grid-template-columns:1fr}
+  .who-card{min-height:0}
+  .stage{min-height:0}
+  .formats{grid-template-columns:1fr 1fr;grid-auto-rows:150px;gap:10px}
+  .fmt.pic .ico{width:28px;height:28px;padding:4px}
+  .fmt.pic h3{font-size:15.5px;line-height:1.2}
+  .fmt{padding:15px}
+  .fmt h3{font-size:16px}
+  .fmt .ico{left:15px;top:14px}
+  .facts{gap:10px}
+  .fact{padding:15px}.fact b{font-size:19px}.fact span{font-size:13.5px}
+  .tiers{grid-template-columns:repeat(3,1fr)}
+  .tier:nth-child(n+4){display:none}
+  .tier b{font-size:13.5px}
+  .row2{grid-template-columns:1fr}
+
+
+  .hero-vis .tag{right:12px}
+  .term{flex-direction:column}
+  .extra{padding:20px}
+  details p{padding-right:0}
+  .calc-r .btn{align-self:stretch;white-space:normal}
+  .btn{white-space:normal;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
+@media (prefers-reduced-motion:no-preference){
+  .hero-vis .main img{animation:grill-reveal 1.55s cubic-bezier(.18,.75,.2,1) both}
+  .hero-vis .main::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(115deg,transparent 23%,#ff9a4244 48%,transparent 72%);transform:translateX(-100%);animation:grill-light 1.45s .15s ease-out both}
+  @keyframes grill-reveal{from{transform:scale(1.14);filter:brightness(.58) saturate(.72)}to{transform:scale(1.04);filter:none}}
+  @keyframes grill-light{from{transform:translateX(-100%);opacity:0}35%{opacity:1}to{transform:translateX(100%);opacity:0}}
+}
+/* Keep anchors clear of the fixed header and mobile shortcut. */
+section[id],.stagebox,#draftTitle{scroll-margin-top:90px}
+:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.hero h1{text-wrap:balance}
+.hero-vis .main img{object-position:50% 58%}
+.hero-vis .tag{font-size:11px}
+.draft pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;font-size:14px;margin-top:16px;background:var(--bg);border:1px solid var(--line2);border-radius:14px;padding:16px}
+.draft .btn+.btn{margin-top:10px}
+@media (max-width:900px){
+  .hero-vis .tag{bottom:12px}
+  .mnav{max-height:calc(100dvh - 76px);overflow:auto}
+}
+@media (max-width:620px){
+  .hero{padding:94px 0 30px}
+  .hero-grid{gap:18px}
+  .hero h1{margin-top:12px}
+  .hero p.sub{margin-top:12px;font-size:16px}
+  .hero-vis{aspect-ratio:4/3}
+  .hero-vis .main img{object-position:50% 40%}
+  .ctas{display:grid;grid-template-columns:1fr;gap:4px;margin-top:16px}
+  .ctas .btn{min-height:48px;padding:10px 14px;font-size:15px}
+  .ctas .btn-ghost{justify-self:center;border-color:transparent}
+  .stats{margin-top:12px;border-radius:14px}
+  .stat{padding:10px 12px}
+  .stat span{margin-top:5px}
+  .form{min-width:0}
+}
+
+
+/* v2: photo facades are full-bleed */
+.scene .fac{-webkit-mask-image:none;mask-image:none;border-radius:18px}
+.scene .fac::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(130% 90% at 50% 40%,transparent 50%,rgba(13,8,6,.7)),linear-gradient(0deg,rgba(13,8,6,.55),transparent 30%);z-index:2}
+.pf img{-webkit-mask-image:none!important;mask-image:none!important}
+.pf-sign,.pf-open,.pf-flame,.pf-note{z-index:3}
+.pf-sign,.hs-sign{background:linear-gradient(180deg,#1a100b,#0e0806);box-shadow:0 0 0 1px rgba(255,236,214,.08),0 10px 24px -10px #000!important;border-radius:6px}
+.pf-sign b,.hs-sign b{color:#4a3a30}
+.fac.lv2 .pf-sign,.hf.lit .hs-sign{box-shadow:0 0 0 1.5px #ff7a1a,0 0 30px -4px rgba(255,106,26,.85),inset 0 0 22px -6px rgba(255,106,26,.55)!important}
+.fac.lv2 .pf-sign b,.hf.lit .hs-sign b{color:#fff1dc;text-shadow:0 0 4px #ffb066,0 0 12px #ff7a1a,0 0 26px #ff4a14,0 0 44px rgba(232,50,30,.8)}
+.pf img{filter:brightness(.3) saturate(.5)}
+.hf .hs-glow{display:none}
+.hf .hs-sign{z-index:4}
+/* ===== variant 2 hero ===== */
+.hero2 .hero-grid{grid-template-columns:1fr 1.02fr}
+.hero2 h1 .line{display:block}
+.neonw{color:#ffe3b8;text-shadow:0 0 6px #ff8a2a,0 0 18px #ff6a1a,0 0 38px rgba(232,50,30,.9),0 0 70px rgba(232,50,30,.55);animation:neonOn 2.4s steps(1) .5s both}
+@keyframes neonOn{0%{color:#5d4a3c;text-shadow:none}8%{color:#ffe3b8;text-shadow:0 0 6px #ff8a2a,0 0 18px #ff6a1a,0 0 38px rgba(232,50,30,.9)}12%{color:#5d4a3c;text-shadow:none}20%,100%{color:#ffe3b8;text-shadow:0 0 6px #ff8a2a,0 0 18px #ff6a1a,0 0 38px rgba(232,50,30,.9),0 0 70px rgba(232,50,30,.55)}}
+.hero2 .btn svg[viewBox="0 0 30 40"]{width:16px;height:22px}
+.hstage{position:relative;aspect-ratio:5/4.3;width:100%;max-height:74vh;justify-self:end}
+.hs-scene{position:absolute;inset:0;border-radius:30px;overflow:hidden;background:#0d0806;box-shadow:0 40px 90px -30px rgba(0,0,0,.95),0 0 0 1px rgba(255,236,214,.1)}
+.hs-scene::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 80% at 50% 100%,transparent 55%,rgba(13,8,6,.55)),linear-gradient(180deg,rgba(13,8,6,.55),transparent 22%);z-index:3}
+.hf{position:absolute;inset:0;opacity:0;transition:opacity .9s ease}
+.hf.on{opacity:1}
+.hf img{position:absolute;max-width:none;filter:brightness(.32) saturate(.5);transition:filter 1.1s ease}
+.hf.lit img{filter:brightness(1.05) saturate(1.1)}
+.hf .hs-sign{position:absolute;display:grid;place-items:center;border-radius:4px;transition:box-shadow .5s}
+.hf .hs-sign b{font-family:var(--display);font-weight:900;letter-spacing:.12em;color:#6d5a4b;white-space:nowrap;line-height:1;transition:color .3s,text-shadow .3s}
+.hf.lit .hs-sign{box-shadow:0 0 0 1.5px #ff7a1a,0 0 26px -2px rgba(255,106,26,.8),inset 0 0 18px -4px rgba(255,106,26,.5)}
+.hf.lit .hs-sign b{color:#fff1dc;text-shadow:0 0 4px #ffb066,0 0 12px #ff7a1a,0 0 26px #ff4a14,0 0 44px rgba(232,50,30,.8);animation:flick .9s steps(1) 1}
+.hf .hs-glow{position:absolute;left:8%;right:8%;bottom:2%;height:24%;border-radius:50%;background:radial-gradient(closest-side,rgba(255,138,42,.55),transparent);opacity:0;transition:opacity 1.2s;mix-blend-mode:screen}
+.hf.lit .hs-glow{opacity:1}
+.hs-chef{position:absolute;left:-26px;bottom:-22px;z-index:5;display:flex;align-items:center;gap:12px;background:rgba(13,11,10,.86);backdrop-filter:blur(10px);border:1px solid rgba(255,236,214,.16);border-radius:999px;padding:6px 18px 6px 6px;box-shadow:0 18px 40px -14px #000}
+.hs-chef img{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:40% 30%;box-shadow:0 0 0 2px #ff6a1a,0 0 18px rgba(255,106,26,.55)}
+.hs-chef span{font-size:13px;color:var(--muted);line-height:1.3}
+.hs-chef b{display:block;color:var(--text);font-size:15px}
+.hs-chip{position:absolute;right:16px;top:16px;z-index:5;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;background:rgba(13,11,10,.78);backdrop-filter:blur(8px);border:1px solid rgba(255,236,214,.16);border-radius:999px;padding:8px 14px;font-weight:700;color:var(--muted)}
+.hs-chip b{color:var(--gold)}
+.hs-chip i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--red);margin-right:8px;box-shadow:0 0 10px var(--red);animation:pulse 1.6s infinite}
+@media (max-width:900px){.hero2 .hero-grid>div:first-child{display:contents}.hero2 .eyebrow{order:1;justify-self:start}.hero2 h1{order:2}.hero2 .hstage{order:3}.hero2 .sub{order:4}.hero2 .ctas{order:5}.hero2 .stats{order:6}.hero2 .hero-grid{grid-template-columns:1fr;row-gap:18px}.hstage{max-width:560px;justify-self:center;max-height:none;margin:8px 0 18px}.hs-chef{left:8px;bottom:-24px}}
+@media (max-width:620px){.hero2 h1 .line{display:inline}.hs-chip span{display:none}.hs-chip{top:auto;bottom:12px;right:12px}.hs-chef img{width:48px;height:48px}.hs-chef b{font-size:13.5px}.hs-chef span{font-size:12px}.hstage{aspect-ratio:5/4.1}}
+@media (prefers-reduced-motion:reduce){.neonw{animation:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="fl" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffc35a"/><stop offset=".5" stop-color="#ff6a1a"/><stop offset="1" stop-color="#e8321e"/>
+    </linearGradient>
+    <symbol id="mark" viewBox="0 0 64 88">
+      <g fill="url(#fl)">
+        <path d="M14 40C14 30 18 26 20 16C22 26 26 30 26 40Z"/>
+        <path d="M25 40C25 26 30 18 32 3C34 18 39 26 39 40Z"/>
+        <path d="M38 40C38 30 42 26 44 16C46 26 50 30 50 40Z"/>
+        <path d="M12 38H52V42C52 52 44 59 32 59C20 59 12 52 12 42Z"/>
+      </g>
+      <rect x="28.5" y="56" width="7" height="30" rx="3.5" fill="#e8321e"/>
+    </symbol>
+    <symbol id="markw" viewBox="0 0 64 88">
+      <g fill="#fff">
+        <path d="M14 40C14 30 18 26 20 16C22 26 26 30 26 40Z"/>
+        <path d="M25 40C25 26 30 18 32 3C34 18 39 26 39 40Z"/>
+        <path d="M38 40C38 30 42 26 44 16C46 26 50 30 50 40Z"/>
+        <path d="M12 38H52V42C52 52 44 59 32 59C20 59 12 52 12 42Z"/>
+        <rect x="28.5" y="56" width="7" height="30" rx="3.5"/>
+      </g>
+    </symbol>
+    <symbol id="flame" viewBox="0 0 30 40"><path fill="url(#fl)" d="M15 0c2 7 11 12 11 23 0 9-5 16-11 16S4 32 4 23c0-6 4-10 5-15 1.5 5 4 7 5 7-1-5-1-10 1-15z"/></symbol>
+    <symbol id="arr" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="tg" viewBox="0 0 24 24"><path fill="currentColor" d="M21.5 4.3 18.4 19c-.2 1-.8 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-1 .5l.3-4.7 8.6-7.8c.4-.3-.1-.5-.6-.2L6.6 13 2 11.6c-1-.3-1-1 .2-1.5L20.2 3c.8-.3 1.6.2 1.3 1.3Z"/></symbol>
+    <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z M12 12.2a2.6 2.6 0 1 0 0-5.2 2.6 2.6 0 0 0 0 5.2Z" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-smoke" viewBox="0 0 32 32"><path d="M10 28c-3-3 3-5 0-9s3-6 1-10M17 28c-3-3 3-5 0-9s3-6 1-10M24 28c-3-3 3-5 0-9s3-6 1-10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <!-- format icons (flat line) -->
+    <symbol id="i-burger" viewBox="0 0 32 32"><path d="M5 14c0-5 5-8 11-8s11 3 11 8Z M4 18h24 M5 22h22v1a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3Z M11 10h.01M16 9h.01M21 10h.01"/></symbol>
+    <symbol id="i-wrap" viewBox="0 0 32 32"><path d="M9 27 24 6c2-1 4 1 3 3L12 29Z M9 27l-3 1 1-3 2 2 M14 19l6 3 M17 14l5 3"/></symbol>
+    <symbol id="i-cup" viewBox="0 0 32 32"><path d="M6 13h17v6a7 7 0 0 1-7 7h-3a7 7 0 0 1-7-7Z M23 15h2a3 3 0 0 1 0 6h-2.5 M11 4c-1 2 1 3 0 5M16 4c-1 2 1 3 0 5"/></symbol>
+    <symbol id="i-pizza" viewBox="0 0 32 32"><path d="M5 8c7-3 15-3 22 0L16 28Z M7 12c6-2 12-2 18 0 M13 15h.01M18 19h.01M15 22h.01"/></symbol>
+    <symbol id="i-sushi" viewBox="0 0 32 32"><ellipse cx="16" cy="12" rx="10" ry="5"/><path d="M6 12v8c0 3 4.5 5 10 5s10-2 10-5v-8"/><ellipse cx="16" cy="12" rx="4" ry="2"/></symbol>
+    <symbol id="i-bake" viewBox="0 0 32 32"><path d="M4 20c2-7 7-11 12-11s10 4 12 11c-3 2-6 1-8-1-1 2-3 3-4 3s-3-1-4-3c-2 2-5 3-8 1Z M12 11l2 9M20 11l-2 9"/></symbol>
+    <symbol id="i-cheb" viewBox="0 0 32 32"><path d="M4 21a12 12 0 0 1 24 0Z M6 21v2M10 21v2M14 21v2M18 21v2M22 21v2M26 21v2"/></symbol>
+    <symbol id="i-moto" viewBox="0 0 32 32"><circle cx="8" cy="23" r="4"/><circle cx="24" cy="23" r="4"/><path d="M8 23h9l3-8h4l2 8 M12 15h6 M20 9h4v6"/></symbol>
+    <symbol id="i-plate" viewBox="0 0 32 32"><path d="M5 22a11 11 0 0 1 22 0Z M3 24h26 M16 11V8 M13 8h6"/></symbol>
+    <!-- who icons -->
+    <symbol id="i-spark" viewBox="0 0 32 32"><path d="M16 3v6M16 23v6M3 16h6M23 16h6M7 7l4 4M21 21l4 4M25 7l-4 4M11 21l-4 4"/></symbol>
+    <symbol id="i-door" viewBox="0 0 32 32"><path d="M7 28V5h14v23 M4 28h24 M17 16h.01 M21 8l5 2v18"/></symbol>
+    <symbol id="i-cycle" viewBox="0 0 32 32"><path d="M26 12a11 11 0 0 0-20-2 M6 4v6h6 M6 20a11 11 0 0 0 20 2 M26 28v-6h-6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 32 32"><rect x="4" y="9" width="12" height="17" rx="2"/><path d="M16 26h10a2 2 0 0 0 2-2v-8 M24 4v8M20 8h8"/></symbol>
+  </defs>
+</svg>
+
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="Бюро ресторанних рішень — на початок">
+      <svg class="mark" aria-hidden="true"><use href="#mark"/></svg>
+      <span><b>БЮРО</b><small>РЕСТОРАННИХ РІШЕНЬ</small></span>
+    </a>
+    <nav class="nav" aria-label="Розділи">
+      <a href="#price">Вартість</a>
+      <a href="#cases">Заклади</a>
+      <a href="#mistakes">Помилки</a>
+      <a href="#chef">Про шефа</a>
+      <a href="#turnkey">Під ключ</a>
+      <a href="#faq">Питання</a>
+    </nav>
+    <a href="#price" class="btn btn-fire">Розрахувати заклад</a>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="mnav"><span></span></button>
+  </div>
+</header>
+<nav class="mnav" id="mnav" inert aria-label="Мобільне меню">
+  <a href="#price">Вартість</a>
+  <a href="#cases">Заклади</a>
+  <a href="#mistakes">Помилки на старті</a>
+  <a href="#chef">Про шефа</a>
+  <a href="#turnkey">Що входить під ключ</a>
+  <a href="#faq">Питання</a>
+  <a href="#price" class="btn btn-fire">Розрахувати заклад</a>
+</nav>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero hero2">
+  <canvas id="sparks" aria-hidden="true"></canvas>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow rv">Бренд-шеф Дмитро · на кухні з 2012 року</span>
+      <h1 class="rv d1"><span class="line">Відкрию ваш заклад</span> <span class="line">так, ніби він <span class="neonw">мій</span></span></h1>
+      <p class="sub rv d2">Кав'ярня, бургерна, шаурма чи ресторан — <b>під ключ від приміщення до першого гостя за 1,5–3 місяці.</b> Веде шеф, який сам щодня працює на кухні. Без франшиз і роялті.</p>
+      <div class="ctas rv d3">
+        <a href="#price" class="btn btn-fire"><svg aria-hidden="true" viewBox="0 0 30 40"><use href="#flame"/></svg>Розпалити свій заклад</a>
+        <a href="https://t.me/Dima_Brss" target="_blank" rel="noopener" class="btn btn-ghost"><svg aria-hidden="true"><use href="#tg"/></svg>Написати шефу</a>
+      </div>
+      <div class="stats rv d3">
+        <div class="stat"><b>20+</b><span>закладів відкрито й перезапущено</span></div>
+        <div class="stat"><b>з 2012</b><span>у громадському харчуванні</span></div>
+        <div class="stat"><b>1,5–3</b><span>місяці до відкриття</span></div>
+        <div class="stat"><b>30 днів</b><span>супроводу після старту</span></div>
+      </div>
+    </div>
+    <div class="hstage rv d2" id="hstage" role="img" aria-label="Ваш майбутній заклад: вивіски різних форматів загоряються по черзі">
+      <div class="hs-scene" id="hsScene"></div>
+      <div class="hs-chef"><img src="../img/chef/chef-grill-fire.jpg" alt="Шеф Дмитро біля гриля" fetchpriority="high"><span><b>Шеф Дмитро</b>сам стоїть біля гриля</span></div>
+      <div class="hs-chip"><i></i><span>Зараз загоряється:</span> <b id="hsName">БУРГЕРНА</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE: build your venue -->
+<section class="sec price-sec" id="price">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="eyebrow rv">Попередній бюджет запуску</span>
+        <h2 class="rv d1">Розпаліть <em>свій заклад</em></h2>
+      </div>
+      <p class="lead rv d2">Оберіть формат і площу, щоб оцінити бюджет. Потім запаліть вивіску та відкрийте двері свого закладу.</p>
+    </div>
+    <div class="build rv">
+      <div class="ctrl">
+        <div>
+          <div class="step-h" id="sh1"><i>1</i><b>Що відкриваємо?</b></div>
+          <div class="fchips" id="fchips">
+            <button type="button" class="fchip" aria-pressed="false" data-f="Бургерна" data-s="БУРГЕРНА"><svg aria-hidden="true"><use href="#i-burger"/></svg>Бургерна</button>
+            <button type="button" class="fchip" aria-pressed="false" data-f="Шаурма" data-s="ШАУРМА"><svg aria-hidden="true"><use href="#i-wrap"/></svg>Шаурма</button>
+            <button type="button" class="fchip" aria-pressed="false" data-f="Кав'ярня" data-s="КАВ'ЯРНЯ"><svg aria-hidden="true"><use href="#i-cup"/></svg>Кав'ярня</button>
+            <button type="button" class="fchip" aria-pressed="false" data-f="Піцерія" data-s="ПІЦЕРІЯ"><svg aria-hidden="true"><use href="#i-pizza"/></svg>Піцерія</button>
+            <button type="button" class="fchip" aria-pressed="false" data-f="Суші" data-s="СУШІ"><svg aria-hidden="true"><use href="#i-sushi"/></svg>Суші</button>
+            <button type="button" class="fchip" aria-pressed="false" data-f="Пекарня" data-s="ПЕКАРНЯ"><svg aria-hidden="true"><use href="#i-bake"/></svg>Пекарня</button>
+            <button type="button" class="fchip" aria-pressed="false" data-f="Чебуречна" data-s="ЧЕБУРЕЧНА"><svg aria-hidden="true"><use href="#i-cheb"/></svg>Чебуречна</button>
+            <button type="button" class="fchip" aria-pressed="false" data-f="Ресторан" data-s="РЕСТОРАН"><svg aria-hidden="true"><use href="#i-plate"/></svg>Ресторан</button>
+          </div>
+        </div>
+        <div>
+          <div class="step-h" id="sh2"><i>2</i><b>Яка площа?</b></div>
+          <div class="area-row"><div class="area-val"><span id="areaOut">35</span><small>м²</small></div></div>
+          <input type="range" id="area" min="10" max="120" step="1" value="35" aria-label="Площа закладу, м²">
+          <div class="scale"><span>10</span><span>40</span><span>80</span><span>120 м²</span></div>
+        </div>
+        <div>
+          <div class="step-h" id="sh3"><i>3</i><b>Приміщення вже є?</b></div>
+          <div class="prem" id="prem">
+            <button type="button" aria-pressed="false" data-p="has">Так, є</button>
+            <button type="button" aria-pressed="false" data-p="no">Ще шукаю</button>
+          </div>
+        </div>
+        <div class="ignite"><button type="button" class="btn btn-fire" id="igniteBtn"><svg aria-hidden="true" viewBox="0 0 30 40"><use href="#flame"/></svg><span>Розпалити мій заклад</span></button></div>
+      </div>
+      <div class="stagebox">
+        <div class="heat" id="heat"><div>Іскра</div><div>Розпал</div><div>Жар</div><div>Вогонь</div></div>
+        <div class="scene">
+          <p class="hint" id="hint" role="status">Оберіть формат, щоб засвітити вивіску.</p>
+          <div class="fac" id="fac" role="img" aria-label="Ваш майбутній заклад"></div>
+          <canvas id="burst" aria-hidden="true"></canvas>
+        </div>
+      </div>
+      <div class="estimate">
+        <div class="out">
+          <div><span>Послуги під ключ</span><b class="big" id="priceOut">3 300 $</b><small>вартість роботи бюро</small></div>
+          <div><span>Вкладення в заклад</span><b id="invOut">15–25 тис. $</b><small>ремонт, обладнання, запуск</small></div>
+          <div><span>До відкриття</span><b id="termOut">1,5–3 міс.</b><small id="termNote">+ місяць супроводу</small></div>
+        </div>
+        <div class="send"><p>Точну суму шеф назве після знайомства з проєктом.</p><a href="#lead" class="btn btn-ghost" id="sendBtn">Перенести розрахунок у заявку <svg aria-hidden="true"><use href="#arr"/></svg></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section class="sec" id="cases">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="eyebrow rv">Досвід Дмитра</span>
+        <h2 class="rv d1">Заклади, які <em>допоміг запустити</em></h2>
+      </div>
+      <p class="lead rv d2">Різні формати запуску: від кафе при ЖК до кухні мережі пабів у Харкові.</p>
+    </div>
+    <div class="cases">
+      <article class="case c1 rv"><img src="../img/places/red-cat-pub.jpg" alt="Команда Red Cat Pub у день відкриття" loading="lazy"><div class="in"><span class="kind">Мережа пабів · Харків</span><h3>Red Cat Pub</h3><p>Запуск кухні як бренд-шеф: ТРЦ «Французький бульвар», Сумська, ХТЗ.</p><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Red%20Cat%20Pub%20%D0%A5%D0%B0%D1%80%D0%BA%D1%96%D0%B2" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#pin"/></svg>На мапі</a></div></article>
+      <article class="case c2 rv d1"><img src="../img/places/eat-it.jpg" alt="Фасад закладу Eat it" loading="lazy"><div class="in"><span class="kind">Кафе при ЖК</span><h3>Eat it</h3><p>Заклад молодіжного формату при житловому комплексі.</p><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Eat%20it%20%D0%A1%D0%BE%D1%84%D1%96%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%B0%20%D0%91%D0%BE%D1%80%D1%89%D0%B0%D0%B3%D1%96%D0%B2%D0%BA%D0%B0" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#pin"/></svg>На мапі</a></div></article>
+      <article class="case c3 rv d2"><img src="../img/places/gotovi-stravy-poruch.jpg" alt="Вивіска «Готові страви поруч»" loading="lazy"><div class="in"><span class="kind">Кулінарія</span><h3>Готові страви поруч</h3><p>Корисні домашні страви на щодень.</p><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%D0%93%D0%BE%D1%82%D0%BE%D0%B2%D1%96%20%D1%81%D1%82%D1%80%D0%B0%D0%B2%D0%B8%20%D0%BF%D0%BE%D1%80%D1%83%D1%87%20%D0%A1%D0%BE%D1%84%D1%96%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%B0%20%D0%91%D0%BE%D1%80%D1%89%D0%B0%D0%B3%D1%96%D0%B2%D0%BA%D0%B0" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#pin"/></svg>На мапі</a></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- MISTAKES / PAINS -->
+<section class="sec" id="mistakes">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="eyebrow rv">Чому заклади гаснуть</span>
+        <h2 class="rv d1">6 помилок, які <em>б’ють по бюджету закладу</em></h2>
+      </div>
+      <p class="lead rv d2">Що перевірити до оренди, закупівель і відкриття.</p>
+    </div>
+    <div class="pains">
+      <article class="pain rv"><div class="bad"><svg class="smoke" aria-hidden="true"><use href="#i-smoke"/></svg><span class="n">ПОМИЛКА 01</span><h3>Оренда «бо гарне місце»</h3><p>Приміщення беруть на емоціях — а потрібного трафіку й аудиторії там немає.</p></div><div class="fix"><svg aria-hidden="true"><use href="#flame"/></svg>Аналізуємо локацію й аудиторію до підпису оренди</div></article>
+      <article class="pain rv d1"><div class="bad"><svg class="smoke" aria-hidden="true"><use href="#i-smoke"/></svg><span class="n">ПОМИЛКА 02</span><h3>Гроші закінчились до відкриття</h3><p>Ремонт «з'їдає» бюджет, і на запуск та перші місяці вже не вистачає.</p></div><div class="fix"><svg aria-hidden="true"><use href="#flame"/></svg>Бізнес-план і кошторис ще до договору</div></article>
+      <article class="pain rv d2"><div class="bad"><svg class="smoke" aria-hidden="true"><use href="#i-smoke"/></svg><span class="n">ПОМИЛКА 03</span><h3>Меню без техкарт</h3><p>Страва щодня різна, собівартість ніхто не рахує — і заробіток тане непомітно.</p></div><div class="fix"><svg aria-hidden="true"><use href="#flame"/></svg>Меню й техкарти від бренд-шефа</div></article>
+      <article class="pain rv"><div class="bad"><svg class="smoke" aria-hidden="true"><use href="#i-smoke"/></svg><span class="n">ПОМИЛКА 04</span><h3>Обладнання «на око»</h3><p>Переплата за зайве або кухня, яка не тягне потік у годину пік.</p></div><div class="fix"><svg aria-hidden="true"><use href="#flame"/></svg>Підбираємо обладнання під ваше меню</div></article>
+      <article class="pain rv d1"><div class="bad"><svg class="smoke" aria-hidden="true"><use href="#i-smoke"/></svg><span class="n">ПОМИЛКА 05</span><h3>Команду вчать «у бою»</h3><p>Перші гості бачать хаос — і більше не повертаються.</p></div><div class="fix"><svg aria-hidden="true"><use href="#flame"/></svg>Навчаємо кухню й зал до відкриття</div></article>
+      <article class="pain rv d2"><div class="bad"><svg class="smoke" aria-hidden="true"><use href="#i-smoke"/></svg><span class="n">ПОМИЛКА 06</span><h3>Після відкриття всі зникли</h3><p>Підрядники пішли, а питання тільки починаються.</p></div><div class="fix"><svg aria-hidden="true"><use href="#flame"/></svg>Місяць супроводу після старту</div></article>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section class="sec" id="who" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="eyebrow rv">Для кого</span>
+        <h2 class="rv d1">Звідки ви <em>стартуєте?</em></h2>
+      </div>
+      <p class="lead rv d2">Оберіть свою ситуацію — і заявка внизу вже знатиме, з чого почати розмову.</p>
+    </div>
+    <div class="who">
+      <button class="who-card rv" data-sit="Перший заклад з нуля"><svg class="ico" aria-hidden="true"><use href="#i-spark"/></svg><h3>Є бюджет, немає досвіду</h3><p>Порахуємо, чи зійдуться цифри, і проведемо через усі етапи.</p><span class="go">Це про мене <svg aria-hidden="true"><use href="#arr"/></svg></span></button>
+      <button class="who-card rv d1" data-sit="Є приміщення"><svg class="ico" aria-hidden="true"><use href="#i-door"/></svg><h3>Є приміщення</h3><p>Оцінимо локацію й підберемо формат під її аудиторію.</p><span class="go">Це про мене <svg aria-hidden="true"><use href="#arr"/></svg></span></button>
+      <button class="who-card rv d2" data-sit="Перезапуск закладу"><svg class="ico" aria-hidden="true"><use href="#i-cycle"/></svg><h3>Заклад не заробляє</h3><p>Перезапуск, ребрендинг, нове меню й техкарти.</p><span class="go">Це про мене <svg aria-hidden="true"><use href="#arr"/></svg></span></button>
+      <button class="who-card rv d3" data-sit="Ще один заклад"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg><h3>Хочу другу точку</h3><p>Новий формат або копія вдалого — поки ви ведете перший.</p><span class="go">Це про мене <svg aria-hidden="true"><use href="#arr"/></svg></span></button>
+    </div>
+  </div>
+</section>
+
+<!-- CHEF -->
+<section class="sec" id="chef" style="padding-top:0">
+  <div class="wrap chef-grid">
+    <div class="chef-pic rv">
+      <div class="frame"><img src="../img/chef/chef-portrait.jpg" alt="Бренд-шеф Дмитро в білому кітелі" loading="lazy"></div>
+    </div>
+    <div>
+      <span class="eyebrow rv">Хто відкриває</span>
+      <h2 class="rv d1">Відкриває той, хто сам <em>годує гостей</em></h2>
+      <p class="lead rv d2">12 років біля плити, потім — керування кухнями й запуски. Я знаю, що має працювати з першого дня, а не тільки гарно виглядати на відкритті.</p>
+      <p class="chef-name rv d2"><b>Шеф Дмитро</b> · бренд-шеф, технолог харчової промисловості</p>
+      <div class="facts">
+        <div class="fact rv"><b>20+</b><span>закладів різних форматів — від Харкова до Кіровоградщини</span></div>
+        <div class="fact rv d1"><b>2 роки</b><span>керую рестораном, який сам відкрив з нуля</span></div>
+        <div class="fact rv d2"><b>Red Cat</b><span>бренд-шеф запуску кухні мережі пабів, Харків</span></div>
+        <div class="fact rv d3"><b>Диплом</b><span>технолога харчової промисловості + закордонна практика</span></div>
+      </div>
+      <blockquote class="quote rv">
+        <p>«Відкриваю не заради відкриття, а заради репутації. Вкладаю душу, бо люблю те, що роблю».</p>
+        <cite>— шеф Дмитро</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- STAGES (fire scale) -->
+<section class="sec stages-sec" id="turnkey">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="eyebrow rv">Що входить під ключ</span>
+        <h2 class="rv d1">Від іскри <em>до вогню</em> — 4 етапи</h2>
+      </div>
+      <p class="lead rv d2">Вам не треба шукати й зводити між собою десяток підрядників. Проєкт веде шеф, кожен етап закриваємо командою.</p>
+    </div>
+    <div class="stages">
+      <article class="stage rv"><div class="flames" aria-hidden="true"><svg><use href="#flame"/></svg><svg class="off"><use href="#flame"/></svg><svg class="off"><use href="#flame"/></svg><svg class="off"><use href="#flame"/></svg></div><span class="lvl">Етап 1</span><h3>Іскра</h3><p class="what">Ідея перетворюється на цифри</p><ul><li>Бізнес-план</li><li>Підбір приміщення</li><li>Аналіз локації та аудиторії</li></ul></article>
+      <article class="stage rv d1"><div class="flames" aria-hidden="true"><svg><use href="#flame"/></svg><svg><use href="#flame"/></svg><svg class="off"><use href="#flame"/></svg><svg class="off"><use href="#flame"/></svg></div><span class="lvl">Етап 2</span><h3>Розпал</h3><p class="what">У закладу з'являється обличчя</p><ul><li>Концепція і назва</li><li>Дизайн і оформлення</li><li>Контроль ремонту й підрядників</li></ul></article>
+      <article class="stage rv d2"><div class="flames" aria-hidden="true"><svg><use href="#flame"/></svg><svg><use href="#flame"/></svg><svg><use href="#flame"/></svg><svg class="off"><use href="#flame"/></svg></div><span class="lvl">Етап 3</span><h3>Жар</h3><p class="what">Кухня готова до потоку</p><ul><li>Обладнання й постачальники</li><li>Меню і техкарти</li><li>Упаковка й уніформа</li></ul></article>
+      <article class="stage rv d3"><div class="flames" aria-hidden="true"><svg><use href="#markw"/></svg><svg><use href="#markw"/></svg><svg><use href="#markw"/></svg><svg><use href="#markw"/></svg></div><span class="lvl">Етап 4</span><h3>Вогонь</h3><p class="what">Двері відчинено — гості йдуть</p><ul><li>Підбір і навчання команди</li><li>Документи, каса, автоматизація</li><li>Просування, відкриття і місяць супроводу</li></ul></article>
+    </div>
+    <div class="extra rv">
+      <p>Не потрібен весь пакет? <b>Можна замовити окремо</b> — наприклад, тільки меню з техкартами чи перезапуск діючого закладу.</p>
+      <div class="chips"><span class="chip">Меню й техкарти</span><span class="chip">Перезапуск</span><span class="chip">Ребрендинг</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="sec" id="steps">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="eyebrow rv">Як це буде</span>
+        <h2 class="rv d1">Від першої розмови<br>до <em>дня відкриття</em></h2>
+      </div>
+      <div class="toggle rv d2" role="group" aria-label="Чи є у вас приміщення">
+        <button type="button" aria-pressed="true" data-mode="has">Є приміщення</button>
+        <button type="button" aria-pressed="false" data-mode="no">Ще немає</button>
+      </div>
+    </div>
+    <div class="steps-grid">
+      <ol class="timeline" id="tl">
+        <span class="fill" id="tlfill" aria-hidden="true"></span>
+        <li data-n="01"><h3>Зустріч і консультація</h3><p>Розповідаєте про ідею, бюджет і очікування. Чесно скажу, що з цього реально.</p></li>
+        <li data-n="02" data-only="no"><h3>Підбір приміщення</h3><p>Шукаємо площу під ваш формат і бюджет, перевіряємо трафік і аудиторію.</p></li>
+        <li data-n="02" data-only="has"><h3>Аналіз вашого приміщення</h3><p>Дивимось локацію, аудиторію і що саме тут спрацює.</p></li>
+        <li data-n="03"><h3>Первинний прорахунок</h3><p>Скільки коштуватиме заклад і наші послуги — ще до підпису.</p></li>
+        <li data-n="04"><h3>Договір</h3><p>Фіксуємо обсяг робіт, вартість і терміни. Після підпису — стартуємо.</p></li>
+        <li data-n="05"><h3>Концепція, дизайн, меню</h3><p>Погоджуєте назву, дизайн і меню перед тим, як рухаємось далі.</p></li>
+        <li data-n="06"><h3>Ремонт, обладнання, команда</h3><p>Ремонт під контролем, паралельно — закупівля обладнання й навчання персоналу.</p></li>
+        <li data-n="07"><h3>Відкриття</h3><p>Перші гості — і шеф поруч на кухні.</p></li>
+        <li data-n="08"><h3>Місяць супроводу</h3><p>Налагоджуємо роботу разом, поки все не піде як годинник.</p></li>
+      </ol>
+      <div class="steps-side rv">
+        <div class="kitchen">
+          <video src="../video/kitchen.mp4" poster="../img/kitchen/kitchen-before-opening.jpg" muted loop playsinline preload="none" aria-label="Відео: нова кухня закладу за кілька днів до відкриття"></video><span class="vtag"><i></i>Відео з об'єкта</span>
+          <div class="cap"><b>Так виглядає кухня за кілька днів до старту</b><span>Обладнання змонтоване, плівку ще не зняли. Далі — навчання команди і перші замовлення.</span></div>
+        </div>
+        <div class="term">
+          <div><b>1,5–3 міс.</b><span>від договору до відкриття</span></div>
+          <div><b>30 днів</b><span>супроводу після старту</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATS -->
+<section class="sec" id="formats" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="eyebrow rv">Формати</span>
+        <h2 class="rv d1">Що <em>розпалюємо</em></h2>
+      </div>
+      <p class="lead rv d2">Від острівця шаурми до повноцінного ресторану. Не бачите свого формату — придумаємо індивідуальний.</p>
+    </div>
+    <div class="formats">
+      <div class="fmt photo rv"><img src="../img/food/burger-black-grey.jpg" alt="Чорний бургер" loading="lazy"><h3>Бургерні</h3><p>Котлета, булка, соуси — все за техкартою</p></div>
+      <div class="fmt pic rv d1"><img src="../img/formats/shawarma.jpg" alt="" loading="lazy"><svg class="ico" aria-hidden="true"><use href="#i-wrap"/></svg><h3>Шаурма</h3><p>Острівець або точка</p></div>
+      <div class="fmt pic rv d2"><img src="../img/formats/coffee.jpg" alt="" loading="lazy"><svg class="ico" aria-hidden="true"><use href="#i-cup"/></svg><h3>Кав'ярні</h3><p>Кава й випічка</p></div>
+      <div class="fmt pic rv d1"><img src="../img/formats/pizza.jpg" alt="" loading="lazy"><svg class="ico" aria-hidden="true"><use href="#i-pizza"/></svg><h3>Піцерії</h3><p>Зал або доставка</p></div>
+      <div class="fmt pic rv d2"><img src="../img/formats/sushi.jpg" alt="" loading="lazy"><svg class="ico" aria-hidden="true"><use href="#i-sushi"/></svg><h3>Суші</h3><p>Під доставку</p></div>
+      <div class="fmt photo rv"><img src="../img/food/skewer-wrap.jpg" alt="Шашлички в лаваші — стрітфуд" loading="lazy"><h3>Стрітфуд</h3><p>Точки й острівці</p></div>
+      <div class="fmt pic rv d1"><img src="../img/formats/bakery.jpg" alt="" loading="lazy"><svg class="ico" aria-hidden="true"><use href="#i-bake"/></svg><h3>Пекарні</h3><p>і кондитерські</p></div>
+      <div class="fmt pic rv d2"><img src="../img/formats/cheburek.jpg" alt="" loading="lazy"><svg class="ico" aria-hidden="true"><use href="#i-cheb"/></svg><h3>Чебуречні</h3><p>Зал або формат із собою</p></div>
+      <div class="fmt pic rv d1"><img src="../img/kitchen/kitchen-before-opening.jpg" alt="" loading="lazy"><svg class="ico" aria-hidden="true"><use href="#i-moto"/></svg><h3>Dark kitchen</h3><p>Тільки доставка</p></div>
+      <div class="fmt pic rv d2"><img src="../img/formats/restaurant.jpg" alt="" loading="lazy"><svg class="ico" aria-hidden="true"><use href="#i-plate"/></svg><h3>Кафе й ресторани</h3><p>У тому числі при ЖК</p></div>
+      <a class="fmt cta rv d3" href="#price"><span class="cta-k">Свій формат?</span><h3>Придумаємо концепт під вашу ідею</h3><p>Порахуйте бюджет за 30 секунд <svg aria-hidden="true"><use href="#arr"/></svg></p></a>
+    </div>
+  </div>
+</section>
+
+<!-- VS -->
+<section class="sec" id="vs" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="eyebrow rv">Чесне порівняння</span>
+        <h2 class="rv d1">Свій вогонь чи <em>чужа вивіска?</em></h2>
+      </div>
+    </div>
+    <div class="vs rv">
+      <div class="vs-col bad">
+        <h3>Франшиза</h3>
+        <ul>
+          <li><span class="mk">✕</span><span><small>Платежі</small>Паушальний внесок і щомісячне роялті</span></li>
+          <li><span class="mk">✕</span><span><small>Бренд і меню</small>Чужі, за стандартами мережі</span></li>
+          <li><span class="mk">✕</span><span><small>Постачальники</small>Нав'язує мережа</span></li>
+          <li><span class="mk">✕</span><span><small>Хто веде запуск</small>Менеджер франшизи</span></li>
+          <li><span class="mk">✕</span><span><small>Свобода</small>Змінити навіть меню — через договір</span></li>
+        </ul>
+      </div>
+      <div class="vs-col good">
+        <h3>Свій заклад з бюро <svg width="22" height="30" aria-hidden="true"><use href="#mark"/></svg></h3>
+        <ul>
+          <li><span class="mk">✓</span><span><small>Платежі</small>Фіксована вартість відкриття, без роялті</span></li>
+          <li><span class="mk">✓</span><span><small>Бренд і меню</small>Ваші — під вашу ідею й аудиторію</span></li>
+          <li><span class="mk">✓</span><span><small>Постачальники</small>Наші перевірені — або ваші</span></li>
+          <li><span class="mk">✓</span><span><small>Хто веде запуск</small>Бренд-шеф, який сам працює на кухні</span></li>
+          <li><span class="mk">✓</span><span><small>Свобода</small>Бізнес на 100% ваш — міняйте що завгодно</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISHES (compact) -->
+<section class="sec" id="dishes" style="padding-bottom:0">
+  <div class="wrap dish-strip">
+    <div class="rv">
+      <span class="eyebrow">Меню входить у запуск</span>
+      <h3 style="margin-top:14px">Меню й техкарти до відкриття</h3>
+      <p>Меню й техкарти розробляє бренд-шеф — щоб кожна страва виходила однаковою, хто б не стояв біля плити.</p>
+    </div>
+    <div class="dishes rv d1">
+      <figure class="dish"><img src="../img/food/burger-black-main.jpg" alt="Чорний бургер з беконом" loading="lazy"><figcaption>Чорний бургер</figcaption></figure>
+      <figure class="dish"><img src="../img/food/skewer-wrap.jpg" alt="Шашлички в лаваші" loading="lazy"><figcaption>Шашлички в лаваші</figcaption></figure>
+      <figure class="dish"><img src="../img/food/pasta-shrimp.jpg" alt="Паста з креветками і песто" loading="lazy"><figcaption>Паста з креветками</figcaption></figure>
+      <figure class="dish"><img src="../img/food/duck.jpg" alt="Качка з грушею в вині" loading="lazy"><figcaption>Качка з грушею</figcaption></figure>
+      <figure class="dish"><img src="../img/food/shrimp-grill.jpg" alt="Тигрові креветки" loading="lazy"><figcaption>Креветки гриль</figcaption></figure>
+      <figure class="dish"><img src="../img/food/brie.jpg" alt="Запечений брі з вишнею" loading="lazy"><figcaption>Брі з вишнею</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap faq-grid">
+    <div>
+      <span class="eyebrow rv">Питання</span>
+      <h2 class="rv d1">Чесні відповіді <em>до першої зустрічі</em></h2>
+      <div class="tg-card rv d2">
+        <b>Не знайшли відповіді?</b>
+        <p>Напишіть шефу напряму — відповім особисто.</p>
+        <a href="https://t.me/Dima_Brss" target="_blank" rel="noopener" class="btn btn-fire"><svg aria-hidden="true"><use href="#tg"/></svg>Telegram</a>
+      </div>
+    </div>
+    <div class="rv">
+      <details><summary>Скільки коштує відкрити заклад повністю?</summary><p>Наші послуги — від 2 800 до 4 800 $ для площі до 80 м². Понад 80 м² бюджет розраховуємо індивідуально. Вкладення в сам заклад — орієнтовно від 10 000 $ для точки до 20 м² і до 65 000 $ для 60–80 м². Точний бюджет рахуємо на першій зустрічі.</p></details>
+      <details><summary>Скільки часу займає відкриття?</summary><p>Зазвичай 1,5–3 місяці від договору до першого гостя. Великі проєкти — довше.</p></details>
+      <details><summary>У мене немає приміщення. Допоможете?</summary><p>Так. Підберемо приміщення під ваш формат і бюджет, проаналізуємо локацію та аудиторію.</p></details>
+      <details><summary>Обладнання й продукти треба купувати тільки у вас?</summary><p>Ні. Можемо запропонувати перевірених постачальників, але якщо у вас є свої — працюємо з ними.</p></details>
+      <details><summary>Можна замовити тільки одну послугу?</summary><p>Так: наприклад, лише меню й техкарти, перезапуск чи ребрендинг діючого закладу.</p></details>
+      <details><summary>Мій заклад працює, але в мінус. Візьметеся?</summary><p>Так. Перезапуск і оновлення — окремий напрям роботи: меню, кухня, концепція, процеси.</p></details>
+      <details><summary>Ви працюєте тільки в одному місті?</summary><p>Ні, по всій Україні — від Харкова до Кіровоградщини вже є відкриті заклади.</p></details>
+      <details><summary>Що буде після відкриття?</summary><p>Перший місяць супроводжуємо: допомагаємо налагодити роботу кухні, залу і процеси.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD -->
+<section class="sec lead-sec" id="lead">
+  <div class="lead-bg" aria-hidden="true"><img src="../img/food/burger-black-main.jpg" alt="" loading="lazy"></div>
+  <div class="wrap lead-grid">
+    <div>
+      <span class="eyebrow rv">Заявка</span>
+      <h2 class="rv d1">Розпалимо <em>ваш заклад?</em></h2>
+      <p class="lead rv d2">Опишіть свій заклад, щоб обговорити з Дмитром бюджет і перші кроки.</p>
+    </div>
+    <form class="form rv" id="leadForm">
+      <div class="fbody">
+        <h3>Про ваш заклад</h3>
+        <div class="calc-sum" id="calcSum" hidden><svg aria-hidden="true" viewBox="0 0 30 40"><use href="#flame"/></svg><span id="calcSumTxt"></span></div>
+        <div class="field">
+          <span class="fl">Ваша ситуація</span>
+          <div class="seg" id="sitSeg">
+            <label><input type="radio" name="sit" value="Перший заклад з нуля" checked><span>З нуля</span></label>
+            <label><input type="radio" name="sit" value="Є приміщення"><span>Є приміщення</span></label>
+            <label><input type="radio" name="sit" value="Перезапуск закладу"><span>Перезапуск</span></label>
+            <label><input type="radio" name="sit" value="Ще один заклад"><span>Друга точка</span></label>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="ffmt">Формат</label>
+            <select id="ffmt" name="format"><option>Бургерна</option><option>Шаурма</option><option>Кав'ярня</option><option>Піцерія</option><option>Суші</option><option>Пекарня</option><option>Чебуречна</option><option>Ресторан</option><option>Інше</option></select></div>
+          <div class="field"><label for="farea">Площа, м²</label><input id="farea" name="area" type="number" inputmode="numeric" min="1" value="35" required></div>
+        </div>
+        <div class="field"><label for="fcity">Місто (необов’язково)</label><input id="fcity" name="city" autocomplete="address-level2" maxlength="80"></div>
+        <button type="submit" class="btn btn-fire">Підготувати заявку <svg aria-hidden="true"><use href="#arr"/></svg></button>
+      </div>
+      <div class="draft" id="draft" hidden>
+        <h3 tabindex="-1" id="draftTitle">Чернетка заявки</h3>
+        <p class="hint">Відкрийте чат із Дмитром і натисніть «Надіслати» в Telegram.</p>
+        <pre id="draftText"></pre>
+        <a id="draftLink" target="_blank" rel="noopener noreferrer" class="btn btn-fire"><svg aria-hidden="true"><use href="#tg"/></svg>Відкрити Telegram</a>
+        <button type="button" id="editDraft" class="btn btn-ghost">Змінити заявку</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a href="#top" class="brand"><svg class="mark" aria-hidden="true"><use href="#mark"/></svg><span><b>БЮРО</b><small>РЕСТОРАННИХ РІШЕНЬ</small></span></a>
+      <div class="soc">
+        <a href="https://t.me/Dima_Brss" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </div>
+    <div class="copy"><span>© 2026 Бюро ресторанних рішень. Заклади під ключ по всій Україні.</span><span>Без роялті · Договір · Місяць супроводу</span></div>
+  </div>
+</footer>
+
+<div class="fab" id="fab" inert><a href="#price" class="btn btn-fire">Розрахувати заклад</a></div>
+
+<script>
+// cover-fit a 1536x1024 photo so the sign sits at fy of the frame height
+function coverPlace(W,H,sg,zoom,fy){
+  const sc=Math.max(W/1536,H/1024)*zoom, cx=(sg[0]+sg[2])/2, cy=(sg[1]+sg[3])/2;
+  const left=Math.min(0,Math.max(W-1536*sc,W/2-cx*sc)), top=Math.min(0,Math.max(H-1024*sc,H*fy-cy*sc));
+  return {sc,left,top};
+}
+window.HERO_VENUES=[
+ {label:'БУРГЕРНА',img:'burger',sg:[267,91,1313,224]},
+ {label:"КАВ'ЯРНЯ",img:'coffee',sg:[291,129,1247,233]},
+ {label:'СУШІ',img:'sushi',sg:[349,217,1203,344]},
+ {label:'ШАУРМА',img:'shawarma',sg:[323,187,1257,315]},
+ {label:'ПІЦЕРІЯ',img:'pizza',sg:[277,167,1277,291]},
+ {label:'ПЕКАРНЯ',img:'bakery',sg:[211,147,1341,276]},
+ {label:'ЧЕБУРЕЧНА',img:'cheburek',sg:[309,127,1260,244]},
+ {label:'РЕСТОРАН',img:'restaurant',sg:[253,167,1300,293]}
+];
+</script>
+<script>
+(()=>{
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const hdr=$('#hdr'), fab=$('#fab'), lead=$('#lead');
+
+/* header, fab, timeline */
+const tl=$('#tl'), fill=$('#tlfill');
+function tlProgress(){
+  const r=tl.getBoundingClientRect(), mid=innerHeight*.6;
+  fill.style.height=Math.max(0,Math.min(r.height,mid-r.top))+'px';
+  $$('#tl li:not([hidden])').forEach(li=>li.classList.toggle('on',li.getBoundingClientRect().top<mid));
+}
+const onScroll=()=>{
+  hdr.classList.toggle('solid',scrollY>30);
+  const showShortcut=$('#price').getBoundingClientRect().bottom<0 && lead.getBoundingClientRect().top>innerHeight;
+  fab.classList.toggle('show',showShortcut);
+  fab.inert=!showShortcut;
+  tlProgress();
+};
+addEventListener('scroll',onScroll,{passive:true});
+
+/* menu */
+const burger=$('#burger');
+const mobileMenu=$('#mnav');
+function setMenu(open){
+  document.body.classList.toggle('menu-open',open);
+  burger.setAttribute('aria-expanded',String(open));
+  mobileMenu.inert=!open;
+}
+burger.addEventListener('click',()=>setMenu(mobileMenu.inert));
+$$('#mnav a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&!mobileMenu.inert){setMenu(false);burger.focus()}
+});
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+$$('.rv').forEach(el=>io.observe(el));
+
+/* sparks */
+const cv=$('#sparks');
+if(cv && !reduce){
+  const ctx=cv.getContext('2d'); let W,H,ps=[];
+  const size=()=>{const d=Math.min(devicePixelRatio||1,2);W=cv.offsetWidth;H=cv.offsetHeight;cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0)};
+  size(); addEventListener('resize',size);
+  const N=innerWidth<700?16:34;
+  const mk=()=>({x:Math.random()*W,y:H+Math.random()*H*.4,r:Math.random()*2+.6,vy:-(Math.random()*1.1+.4),vx:(Math.random()-.5)*.4,w:Math.random()*6.3,life:0,max:Math.random()*260+180});
+  for(let i=0;i<N;i++){const p=mk();p.y=Math.random()*H;ps.push(p)}
+  let vis=true; new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(cv);
+  (function loop(){
+    if(vis){
+      ctx.clearRect(0,0,W,H); ctx.globalCompositeOperation='lighter';
+      for(const p of ps){
+        p.life++; p.w+=.03; p.x+=p.vx+Math.sin(p.w)*.35; p.y+=p.vy;
+        const t=p.life/p.max, a=Math.max(0,1-t)*(p.y/H*.9+.1);
+        const g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*4);
+        g.addColorStop(0,`rgba(255,${180-t*90|0},70,${a})`); g.addColorStop(1,'rgba(232,50,30,0)');
+        ctx.fillStyle=g; ctx.beginPath(); ctx.arc(p.x,p.y,p.r*4,0,7); ctx.fill();
+        if(t>=1||p.y<-20)Object.assign(p,mk());
+      }
+    }
+    requestAnimationFrame(loop);
+  })();
+}
+
+/* situations -> form */
+$$('.who-card').forEach(b=>b.addEventListener('click',()=>{
+  showDraft(false);
+  const r=$(`#sitSeg input[value="${b.dataset.sit}"]`); if(r)r.checked=true;
+  transferredPremises=null;
+  lead.scrollIntoView({behavior:reduce?'auto':'smooth'});
+}));
+
+/* kitchen video: play only when visible */
+const kv=$('.kitchen video');
+if(kv){new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){if(kv.preload==='none')kv.preload='auto';if(!reduce)kv.play().catch(()=>{})}else kv.pause()}),{threshold:.35}).observe(kv)}
+
+/* timeline toggle */
+function setMode(m){
+  $$('.toggle button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.mode===m));
+  $$('#tl li').forEach(li=>{li.hidden=!!li.dataset.only&&li.dataset.only!==m});
+  tlProgress();
+}
+$$('.toggle button').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));
+setMode('has');
+
+/* build-your-venue */
+const area=$('#area'), out=$('#areaOut'), pOut=$('#priceOut'), iOut=$('#invOut'), tOut=$('#termOut'), tNote=$('#termNote'), fac=$('#fac'), stagebox=$('.stagebox'), heat=$$('#heat div'), hint=$('#hint'), igBtn=$('#igniteBtn');
+const tiers=[{max:20,fee:2800,investment:[10,18]},{max:40,fee:3300,investment:[15,25]},{max:60,fee:3600,investment:[20,40]},{max:80,fee:4800,investment:[35,65]},{max:Infinity}];
+const tierOf=sqm=>tiers.findIndex(tier=>sqm<=tier.max);
+function estimate(sqm){
+  const tier=tiers[tierOf(sqm)];
+  if(!tier.fee)return {fee:'Індивідуально',investment:'Індивідуально',term:'За проєктом'};
+  const [low,high]=tier.investment;
+  return {fee:tier.fee.toLocaleString('uk-UA')+' $',investment:`${low}–${high} тис. $`,term:'1,5–3 міс.'};
+}
+const S={f:null,s:'ВАШ ЗАКЛАД',area:35,prem:null,ft:false,at:false,lit:false};
+let facadeKey='', burstFrame, burstTimer;
+// Photo storefronts (generated concepts). Coordinates in source px (1536x1024):
+// building left/right, ground line, sign box.
+const VENUES={
+  'БУРГЕРНА':{img:'burger',sg:[267,91,1313,224],light:'#ffb070'},
+  'ШАУРМА':{img:'shawarma',sg:[323,187,1257,315],light:'#ffc07a'},
+  "КАВ'ЯРНЯ":{img:'coffee',sg:[291,129,1247,233],light:'#ffd29a'},
+  'ПІЦЕРІЯ':{img:'pizza',sg:[277,167,1277,291],light:'#ff9a52'},
+  'СУШІ':{img:'sushi',sg:[349,217,1203,344],light:'#ffb27a'},
+  'ПЕКАРНЯ':{img:'bakery',sg:[211,147,1341,276],light:'#ffc884'},
+  'ЧЕБУРЕЧНА':{img:'cheburek',sg:[309,127,1260,244],light:'#ffd39a'},
+  'РЕСТОРАН':{img:'restaurant',sg:[253,167,1300,293],light:'#ffd0a0'}
+};
+const pfEls={};
+function buildStage(){
+  for(const [label,v] of Object.entries(VENUES)){
+    const el=document.createElement('div'); el.className='pf';
+    el.innerHTML=`<span class="pf-glow"></span><img src="../img/venues2/${v.img}.jpg" alt="" loading="lazy" decoding="async"><span class="pf-sign"><b></b></span><span class="pf-open">ВІДЧИНЕНО</span><svg class="pf-flame" viewBox="0 0 64 88" aria-hidden="true"><use href="#mark"/></svg>`;
+    fac.appendChild(el); pfEls[label]=el;
+  }
+  const n=document.createElement('span'); n.className='pf-note'; n.textContent='Концепт для прикладу'; fac.appendChild(n);
+}
+function layoutVenue(label,tier,text){
+  const v=VENUES[label], el=pfEls[label]; if(!v||!el)return;
+  const Wc=fac.clientWidth, Hc=fac.clientHeight; if(!Wc||!Hc)return;
+  const z=[1,1.04,1.08,1.12,1.16][tier]??1.08, P=coverPlace(Wc,Hc,v.sg,z,.3), sc=P.sc, left=P.left, top=P.top;
+  const img=el.querySelector('img');
+  Object.assign(img.style,{width:1536*sc+'px',height:1024*sc+'px',left:left+'px',top:top+'px'});
+  const [x0,y0,x1,y1]=v.sg, sw=(x1-x0)*sc, sh=(y1-y0)*sc, sign=el.querySelector('.pf-sign');
+  Object.assign(sign.style,{left:left+x0*sc+'px',top:top+y0*sc+'px',width:sw+'px',height:sh+'px'});
+  const t=sign.querySelector('b'); t.textContent=text;
+  t.style.fontSize=Math.max(10,Math.min(sh*.52,(sw*.84)/(text.length*.9)))+'px';
+  const cx=left+((x0+x1)/2)*sc, op=el.querySelector('.pf-open'), fl=el.querySelector('.pf-flame'), gl=el.querySelector('.pf-glow');
+  Object.assign(op.style,{left:cx+'px',top:top+y1*sc+10+'px'});
+  Object.assign(fl.style,{left:cx+'px',top:Math.max(sh*.9,top+y0*sc-4)+'px',width:Math.max(18,sh*.5)+'px',height:Math.max(25,sh*.7)+'px'});
+  Object.assign(gl.style,{left:cx-sw*.75+'px',top:top+y1*sc+'px',width:sw*1.5+'px',height:Hc-(top+y1*sc)+'px'});
+}
+let curLabel='';
+function facade(tier,label){
+  if(!fac.childElementCount)buildStage();
+  const key=VENUES[label]?label:'РЕСТОРАН';
+  for(const [l,el] of Object.entries(pfEls))el.classList.toggle('on',l===key);
+  stagebox.style.setProperty('--venue-light',VENUES[key].light);
+  layoutVenue(key,tier,label);
+  if(key!==curLabel&&label!=='ВАШ ЗАКЛАД'){const sg=pfEls[key].querySelector('.pf-sign');sg.classList.remove('flick');void sg.offsetWidth;sg.classList.add('flick')}
+  curLabel=key;
+}
+addEventListener('resize',()=>{facadeKey='';render()},{passive:true});
+const lvl=()=>S.lit?4:S.ft?(S.at||S.prem?3:2):1;
+function render(){
+  const a=+area.value; S.area=a; out.textContent=a;
+  area.style.setProperty('--p',((a-area.min)/(area.max-area.min)*100)+'%');
+  const ti=tierOf(a), L=lvl(), quote=estimate(a);
+  const key=`${ti}:${S.s}`;
+  if(key!==facadeKey){
+    facade(ti,S.s,S.icon);
+    facadeKey=key;
+  }
+  stagebox.dataset.stage=L;
+  fac.classList.toggle('lv2',L>=2);
+  fac.classList.toggle('lv3',L>=3);
+  fac.classList.toggle('lv4',L>=4);
+  heat.forEach((indicator,i)=>{
+    indicator.classList.toggle('on',i<L);
+    if(i===L-1)indicator.setAttribute('aria-current','step');
+    else indicator.removeAttribute('aria-current');
+  });
+  $('#sh1').classList.toggle('done',S.ft); $('#sh2').classList.toggle('done',S.at); $('#sh3').classList.toggle('done',!!S.prem);
+  pOut.textContent=quote.fee;
+  iOut.textContent=quote.investment;
+  tOut.textContent=quote.term;
+  tNote.textContent=S.prem==='no'?'підбір приміщення · місяць супроводу':'+ місяць супроводу';
+  const message=S.lit?'Відчинено! Перейдіть до заявки з розрахунком.':S.ft?'Змініть площу й розпаліть заклад.':'Оберіть формат, щоб засвітити вивіску.';
+  if(hint.textContent!==message)hint.textContent=message;
+
+}
+function burst(){
+  const cv=$('#burst'); if(reduce||!cv)return;
+  cancelAnimationFrame(burstFrame);
+  const ctx=cv.getContext('2d'), d=Math.min(devicePixelRatio||1,2), W=cv.offsetWidth, H=cv.offsetHeight;
+  cv.width=W*d; cv.height=H*d; ctx.setTransform(d,0,0,d,0,0);
+  const ps=Array.from({length:74},()=>({x:W/2+(Math.random()-.5)*W*.5,y:H*.78,vx:(Math.random()-.5)*3.2,vy:-(Math.random()*5+2.5),r:Math.random()*1.35+.65,l:0,m:Math.random()*50+50}));
+  (function f(){ctx.clearRect(0,0,W,H);ctx.globalCompositeOperation='lighter';let alive=0;
+    for(const p of ps){if(p.l>p.m)continue;alive++;p.l++;p.x+=p.vx;p.y+=p.vy;p.vy+=.07;const k=1-p.l/p.m;
+      const g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*4);g.addColorStop(0,`rgba(255,${200-p.l*1.5|0},80,${k})`);g.addColorStop(1,'rgba(232,50,30,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(p.x,p.y,p.r*4,0,7);ctx.fill()}
+    if(alive)burstFrame=requestAnimationFrame(f);else ctx.clearRect(0,0,W,H)})();
+}
+$$('#fchips .fchip').forEach(c=>c.addEventListener('click',()=>{
+  $$('#fchips .fchip').forEach(x=>x.setAttribute('aria-pressed',x===c));
+  if(S.f===c.dataset.f)return;
+  clearTimeout(burstTimer);
+  S.f=c.dataset.f; S.s=c.dataset.s; S.icon=c.querySelector('use').getAttribute('href'); S.ft=true; S.lit=false;
+  igBtn.querySelector('span').textContent='Розпалити мій заклад';
+  $('#sendBtn').classList.replace('btn-fire','btn-ghost');
+  render();
+  if(!reduce)fac.animate([{opacity:.32,transform:'translateY(9px)'},{opacity:1,transform:'none'}],{duration:340,easing:'ease-out'});
+}));
+area.addEventListener('input',()=>{S.at=true;render()});
+$$('#prem button').forEach(b=>b.addEventListener('click',()=>{
+  $$('#prem button').forEach(x=>x.setAttribute('aria-pressed',x===b)); S.prem=b.dataset.p; render();
+}));
+igBtn.addEventListener('click',()=>{
+  if(!S.ft){
+    hint.textContent='Спочатку оберіть формат, щоб розпалити заклад.';
+    $('#fchips .fchip').focus();
+    return;
+  }
+  const replay=S.lit;
+  S.lit=true;
+  render();
+  if(innerWidth<=900)stagebox.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+  if(!reduce){
+    if(replay){
+      const sg=fac.querySelector('.pf.on .pf-sign'); if(sg){sg.classList.remove('flick');void sg.offsetWidth;sg.classList.add('flick')}
+    }
+    stagebox.animate([
+      {boxShadow:'inset 0 -90px 100px -95px transparent'},
+      {boxShadow:'inset 0 -90px 100px -55px #ec622675',offset:.42},
+      {boxShadow:'inset 0 -90px 100px -95px transparent'}
+    ],{duration:1100,easing:'ease-out'});
+    clearTimeout(burstTimer);
+    burstTimer=setTimeout(burst,innerWidth<=900?340:180);
+  }
+  igBtn.querySelector('span').textContent='Повторити відкриття';
+  $('#sendBtn').classList.replace('btn-ghost','btn-fire');
+});
+const form=$('#leadForm'), formBody=$('.fbody'), formatField=$('#ffmt'), areaField=$('#farea');
+let transferred=false, transferredPremises=null;
+function updateSummary(){
+  if(!transferred)return;
+  const sqm=areaField.valueAsNumber;
+  $('#calcSum').hidden=!areaField.validity.valid;
+  if(areaField.validity.valid){
+    const {fee,investment}=estimate(sqm);
+    $('#calcSumTxt').textContent=`${formatField.value} · ${sqm} м² · послуги: ${fee} · вкладення: ${investment}`;
+  }
+}
+function showDraft(show){
+  formBody.hidden=show;
+  $('#draft').hidden=!show;
+}
+$('#sendBtn').addEventListener('click',()=>{
+  showDraft(false);
+  if(S.f)formatField.value=S.f;
+  areaField.value=S.area;
+  if(S.prem){
+    const sit=S.prem==='has'?'Є приміщення':'Перший заклад з нуля';
+    $(`#sitSeg input[value="${sit}"]`).checked=true;
+  }
+  transferred=true;
+  transferredPremises=S.prem;
+  updateSummary();
+});
+formatField.addEventListener('input',updateSummary);
+areaField.addEventListener('input',updateSummary);
+render();
+
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+  const sqm=areaField.valueAsNumber, quote=estimate(sqm);
+  const city=$('#fcity').value.trim(), situation=$('#sitSeg input:checked').value;
+  const message=[
+    'Вітаю, Дмитре! Хочу обговорити запуск закладу.',
+    `Ситуація: ${situation}`,
+    `Формат: ${formatField.value}`,
+    `Площа: ${sqm} м²`,
+    transferredPremises==='no'&&situation==='Перший заклад з нуля'&&'Приміщення ще шукаю.',
+    city&&`Місто: ${city}`,
+    transferred&&`Попередній розрахунок: послуги — ${quote.fee}, вкладення — ${quote.investment}, строк — ${quote.term}`
+  ].filter(Boolean).join('\n');
+  $('#draftText').textContent=message;
+  const telegram=new URL('https://t.me/Dima_Brss');
+  telegram.searchParams.set('text',message);
+  $('#draftLink').href=telegram.href;
+  showDraft(true);
+  $('#draftTitle').focus();
+});
+$('#editDraft').addEventListener('click',()=>{
+  showDraft(false);
+  formatField.focus();
+});
+
+onScroll();
+})();
+
+/* ===== variant 2: hero storefront that cycles neon signs ===== */
+(()=>{
+  const scene=document.getElementById('hsScene'); if(!scene)return;
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const V=window.HERO_VENUES||[];
+  const els=V.map(v=>{const el=document.createElement('div');el.className='hf';el.innerHTML=`<span class="hs-glow"></span><img src="../img/venues2/${v.img}.jpg" alt="" decoding="async"><span class="hs-sign"><b>${v.label}</b></span>`;scene.appendChild(el);return el});
+  function layout(){
+    const W=scene.clientWidth,H=scene.clientHeight; if(!W)return;
+    V.forEach((v,i)=>{const el=els[i],img=el.querySelector('img'),P=coverPlace(W,H,v.sg,1.06,.34),sc=P.sc;
+      Object.assign(img.style,{width:1536*sc+'px',height:1024*sc+'px',left:P.left+'px',top:P.top+'px'});
+      const [x0,y0,x1,y1]=v.sg, sw=(x1-x0)*sc, sh=(y1-y0)*sc, sg=el.querySelector('.hs-sign');
+      Object.assign(sg.style,{left:P.left+x0*sc+'px',top:P.top+y0*sc+'px',width:sw+'px',height:sh+'px'});
+      sg.querySelector('b').style.fontSize=Math.max(10,Math.min(sh*.52,(sw*.84)/(v.label.length*.9)))+'px';
+    });
+  }
+  let i=0; const name=document.getElementById('hsName');
+  function show(k){els.forEach((e,j)=>{e.classList.toggle('on',j===k);if(j!==k)e.classList.remove('lit')});name.textContent=V[k].label;
+    setTimeout(()=>els[k].classList.add('lit'),reduce?0:650)}
+  layout(); addEventListener('resize',layout,{passive:true});
+  show(0);
+  if(!reduce){let vis=true;new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(scene);
+    setInterval(()=>{if(!vis||document.hidden)return;i=(i+1)%V.length;show(i)},3200)}
+})();
+</script>
+</body>
+</html>
