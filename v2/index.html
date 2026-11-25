@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Бюро ресторанних рішень — заклад під ключ від бренд-шефа (варіант 2)</title>
+<title>Бюро ресторанних рішень — заклад під ключ від бренд-шефа</title>
 <meta name="description" content="Відкриваємо кав'ярні, бургерні, шаурму, піцерії та ресторани під ключ по всій Україні. Бренд-шеф з 2012 року, 20+ закладів, 1,5–3 місяці до відкриття, місяць супроводу.">
 <meta property="og:title" content="Бюро ресторанних рішень — заклад під ключ від бренд-шефа">
 <meta property="og:description" content="Від приміщення до першого гостя за 1,5–3 місяці. 20+ закладів по Україні. Без роялті.">
@@ -15,6 +15,9 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://mkazymyrowych-afk.github.io/buro-restorannykh-rishen/v2/">
+<link rel="alternate" hreflang="uk" href="https://mkazymyrowych-afk.github.io/buro-restorannykh-rishen/v2/">
+<link rel="alternate" hreflang="pl" href="https://mkazymyrowych-afk.github.io/buro-restorannykh-rishen/pl/">
+<link rel="alternate" hreflang="en" href="https://mkazymyrowych-afk.github.io/buro-restorannykh-rishen/en/">
 <meta name="theme-color" content="#0d0b0a">
 <link rel="icon" href="../img/logo/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -613,6 +616,16 @@ section[id],.stagebox,#draftTitle{scroll-margin-top:90px}
 .dlg-trust{display:flex;gap:8px;justify-content:center;align-items:center;font-size:13px;color:var(--muted);padding:0 26px 22px;text-align:center}
 .dlg-trust svg{width:15px;height:15px;flex:none;color:#3aa0ff}
 @media (max-width:620px){.dlg-vis{height:150px}.dlg-head{padding:0 18px}.dlg-head h3{font-size:18px}.dlg-head img{width:52px;height:52px}.dlg-nums{padding:14px 18px 0;gap:6px}.dlg-nums div{padding:9px 10px}.dlg-nums b{font-size:13px}.dlg-nums span{font-size:9.5px}.lead-dlg .form{padding:14px 18px 4px}.dlg-trust{padding:0 18px 18px}}
+
+/* language switcher + credit */
+.lng{display:flex;gap:2px;margin-left:auto;border:1px solid var(--line2);border-radius:999px;padding:3px;flex:none}
+.lng a{font-size:12.5px;font-weight:800;letter-spacing:.06em;padding:7px 10px;border-radius:999px;color:var(--muted);line-height:1}
+.lng a:hover{color:var(--text)}
+.lng a[aria-current]{background:var(--fire);color:#1a0d05}
+.copy .by a{color:var(--text);text-decoration:underline;text-underline-offset:3px}
+.hdr .wrap>.nav{margin-left:auto}
+@media (max-width:900px){.lng a{padding:7px 8px}}
+@media (max-width:480px){.hdr .wrap{gap:10px}.lng{padding:2px}.lng a{font-size:11px;padding:6px 6px;letter-spacing:.03em}.brand small{font-size:9px}}
 </style>
 </head>
 <body>
@@ -677,6 +690,7 @@ section[id],.stagebox,#draftTitle{scroll-margin-top:90px}
       <a href="#turnkey">Під ключ</a>
       <a href="#faq">Питання</a>
     </nav>
+    <div class="lng" aria-label="Мова"><a href="../v2/" hreflang="uk" data-l="uk" aria-current="true">UA</a><a href="../pl/" hreflang="pl" data-l="pl">PL</a><a href="../en/" hreflang="en" data-l="en">EN</a></div>
     <a href="#price" class="btn btn-fire">Розрахувати заклад</a>
     <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="mnav"><span></span></button>
   </div>
@@ -1068,7 +1082,7 @@ section[id],.stagebox,#draftTitle{scroll-margin-top:90px}
         <a href="https://t.me/Dima_Brss" target="_blank" rel="noopener">Telegram</a>
       </div>
     </div>
-    <div class="copy"><span>© 2026 Бюро ресторанних рішень. Заклади під ключ по всій Україні.</span><span>Без роялті · Договір · Місяць супроводу</span></div>
+    <div class="copy"><span>© 2026 Бюро ресторанних рішень. Заклади під ключ по всій Україні.</span><span>Без роялті · Договір · Місяць супроводу</span><span class="by">Сайт: <a href="https://bymyro.com/" target="_blank" rel="noopener">BY_MYRO Web Studio</a></span></div>
   </div>
 </footer>
 
